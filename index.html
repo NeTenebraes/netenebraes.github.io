@@ -3,337 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="Esta es una descripción de la pagina">
+    <title>NeTenebrae en GitHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Generales */
+        body {
+            background-color: #000000; /* Fondo negro */
+            color: #FFFFFF; /* Texto blanco por defecto */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-    <title>Estructura de HTML | NeTenebrae</title>  
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center; /* Centrar contenido principal */
+        }
 
-    <link rel="icon" type="image" href="https://i.postimg.cc/VNfYDmf9/Profile-Picture.webp"> 
+        /* Encabezado */
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid #333;
+        }
 
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            color: #00CC99; /* Color de acento para el título principal */
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #CCCCCC;
+        }
+
+        /* Sección de Introducción */
+        .intro-section {
+            padding: 60px 0;
+        }
+
+        .intro-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            color: #00CCCC; /* Otro color de acento */
+            margin-bottom: 20px;
+        }
+
+        .intro-section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        /* Botón principal */
+        .btn {
+            display: inline-block;
+            background-color: #00CC99; /* Color del botón */
+            color: #000000; /* Texto del botón oscuro */
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #00EEAA; /* Ligeramente más claro al pasar el mouse */
+            transform: translateY(-2px); /* Pequeño efecto de elevación */
+        }
+
+        /* Sección de Qué Encontrarás */
+        .features-section {
+            padding: 60px 0;
+            background-color: #1a1a1a; /* Un negro ligeramente menos oscuro para diferenciar secciones */
+            border-top: 1px solid #333;
+        }
+
+        .features-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            color: #00CCCC;
+            margin-bottom: 30px;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-item {
+            flex-basis: calc(33% - 40px); /* 3 columnas con espacio */
+            background-color: #2a2a2a;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-item h3 {
+            color: #00CC99;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 0.95em;
+            color: #CCCCCC;
+        }
+
+        /* Pie de página */
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid #333;
+            color: #999999;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #00CC99;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #00EEAA;
+        }
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .intro-section h2 {
+                font-size: 2em;
+            }
+
+            .feature-item {
+                flex-basis: calc(50% - 40px); /* 2 columnas en pantallas medianas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .intro-section h2 {
+                font-size: 1.8em;
+            }
+
+            .feature-item {
+                flex-basis: 100%; /* 1 columna en pantallas pequeñas */
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <h1>Aprendiendo HTML con NeTenebrae</h1>
-       <a href="../01.HTML"><img src="https://i.postimg.cc/t904cH7N/Notion-Background.webp" alt="Background de Notion"></a>
-        <nav>
-            <ul>
-                <li><a href="./Estructura de HTML.HTML">Que es HTML y su Estructura básica</a></li>
-                <li><a href=""></a></li>
-                <li><a href="">Tablas en HTML</a></li>
-            </ul>
-        </nav>
-        <hr>
-        <nav>
-            <h3>Indice</h3>
-            <ul>
-                <li><a href="#HTML">¿Qué es HTML?</a></li>
-                <li><a href="#estructura">Estructura HTML</a></li>
-                <li><a href="#texto-html">Agregar Texto</a></li>
-                <li><a href="#quotes-html">Agregar Citas (Quotes)</a></li>
-                <li><a href="#subitems-html">Sub-ítems en Tablas</a></li>
-                <li><a href="#codigo-html">Visualizar Código</a></li>
-                <li><a href="#imprescindible-html">HTML Imprescindible</a></li>
-            </ul>
-        </nav>
-    </header>
-    <hr>
-    <main>
-        <section id="HTML">
-            <h2>¿Que es HTML?</h2>
-            <img src="https://i.postimg.cc/85qbMLxj/Skeleton.webp" alt="">
-            <p>
-                HTML son las siglas de <b>HyperText Markup Language</b> (Lenguaje de Marcado de Hipertexto). Es el lenguaje estándar utilizado para crear y estructurar el contenido de las páginas web.
-                <br>
-                <br>
-                Un documento HTML se compone de un conjunto de "<strong>elementos</strong>" grupados que definen tanto la información general del documento como el contenido visible para el usuario. 
-                Piensa en HTML como el "<strong>esqueleto</strong>" sobre el cual construyes toda una página web. No es un lenguaje que se encargue del diseño visual en sí (para eso está CSS), ni de la interactividad (JavaScript por acá), 
-                sino de organizar y estructurar la información. Sin embargo, ten presente que a día de hoy los 3 son comunmente usados para el desarrollo de una página web, siendo HTML el inicio de todo un recorrido para ser 
-                desarrollador FullStack.
-            </p>
-        </section>
-        <hr>    
-        <section id="estructura">
-            <h2>Estructura HTML</h2>
-            <p>Todo documento HTML comienza con un esqueleto básico compuesto por "<strong>elementos</strong>" para que el navegador los interprete de forma correcta, aquí vamos a desglozar una estructura básica de HTML:</p>
+    <div class="container">
+        <header>
+            <h1>Bienvenido a NeTenebrae en GitHub</h1>
+            <p>Explora el universo de código y proyectos de NeTenebrae.</p>
+        </header>
 
-           <blockquote><pre><code>
-1 <a href="#linea01">&lt;!DOCTYPE html&gt;</a>
-2 &lt;html lang="es"&gt;
-3 &lt;head&gt;
-4     &lt;meta charset="UTF-8"&gt;
-5     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-6     &lt;title&gt;Título de mi Página&lt;/title&gt;
-7     &lt;!-- Enlace a CSS --&gt;
-8     &lt;link rel="stylesheet" href="estilos.css"&gt;
-9     &lt;!-- Enlace a JavaScript --&gt;
-10     &lt;script src="script.js" defer&gt;&lt;/script&gt;
-11 &lt;/head&gt;
-12 &lt;body&gt;
-13     &lt;!-- Aquí va el contenido visible --&gt;
-14 &lt;/body&gt;
-15 &lt;/html&gt;
-            </code></pre></blockquote>
-        <hr>
+        <section class="intro-section">
+            <h2>¿Qué es GitHub?</h2>
+            <p>GitHub es la plataforma donde los desarrolladores construyen, comparten y colaboran en software. Para NeTenebrae, es el centro de nuestras creaciones, donde puedes ver nuestro progreso, contribuir y aprender con nosotros.</p>
+            <p>¡Prepárate para sumergirte en el código y descubrir todo lo que hemos estado construyendo!</p>
+            <a href="https://github.com/NeTenebrae" class="btn" target="_blank" rel="noopener noreferrer">
+                <img src="https://github.githubassets.com/assets/GitHub-Mark-Rev-61c02f72a6c1.svg" alt="GitHub Octocat" width="20" height="20" style="vertical-align: middle; margin-right: 8px;">
+                Visita Nuestro Perfil en GitHub
+            </a>
         </section>
 
-        <section id="texto-html">
-            <h2 id="linea01">Linea 01. Etiqueta "&lt;!DOCTYPE html&gt;"</h2>
-            <p>
-                <strong>&lt;!DOCTYPE html&gt;</strong> es la declaración de tipo de documento para HTML. Es la primera línea que ves en casi todos los documentos HTML. Aunque parece una etiqueta HTML, técnicamente no lo es. Es una instrucción para el navegador web.
-            </p>
-            <h3>¿Para qué sirve?</h3>
-            <p>
-
-                Su propósito principal es decirle al navegador qué versión de HTML se está utilizando en el documento. Esto es crucial porque le indica al navegador cómo debe renderizar (mostrar) la página.
-
-            <ul>
-                <li><strong>Modo Estándar (Standards Mode):</strong></li> 
-                    <p>
-                        Cuando el navegador ve &lt;!DOCTYPE html&gt;, sabe que debe renderizar la página en el "modo estándar", lo que significa que seguirá estrictamente las especificaciones de HTML5 y CSS. 
-                        Este es el modo moderno y el deseado.
-                    </p>
-                <li><strong>Modo Quirks (Quirks Mode):</strong></li> 
-                   <p> 
-                        Si la declaración &lt;!DOCTYPE html&gt; está ausente o es incorrecta, el navegador podría entrar en "modo quirks". En este modo, el navegador intenta imitar el comportamiento de navegadores antiguos para renderizar páginas creadas antes de que 
-                        los estándares web estuvieran bien definidos. Esto puede llevar a inconsistencias en el diseño y en la forma en que se ve tu página en diferentes navegadores, ya que el comportamiento del modo quirks varía.
-                    </p>
-            </ul>        </p>
-
-
-        <hr>
-        <section id="quotes-html">
-            <h2>3. Cómo Agregar Citas (Quotes)</h2>
-            <p>HTML tiene etiquetas específicas para citar texto, mejorando la semántica de tu contenido:</p>
-            <h3>Citas en Bloque (<code>&lt;blockquote&gt;</code>)</h3>
-            <p>Para citas largas o bloques de texto que se extraen de otra fuente. Los navegadores suelen aplicar sangría.</p>
-            <blockquote>
-                <p>La vida es lo que pasa mientras estás ocupado haciendo otros planes.</p>
-                <footer>— <cite>John Lennon</cite></footer>
-            </blockquote>
-            <pre><code>
-&lt;blockquote cite="URL_de_la_fuente"&gt;
-    &lt;p&gt;Texto de la cita.&lt;/p&gt;
-    &lt;footer&gt;— &lt;cite&gt;Autor o Fuente&lt;/cite&gt;&lt;/footer&gt;
-&lt;/blockquote&gt;
-            </code></pre>
-
-            <h3>Citas en Línea (<code>&lt;q&gt;</code>)</h3>
-            <p>Para citas cortas dentro de un párrafo o una oración. Los navegadores pueden añadir comillas automáticamente.</p>
-            <p>Como dijo la célebre frase, <q>El conocimiento es poder</q>.</p>
-            <pre><code>
-&lt;p&gt;Como dijo la célebre frase, &lt;q cite="URL_de_la_fuente"&gt;El conocimiento es poder&lt;/q&gt;.&lt;/p&gt;
-            </code></pre>
-
-            <h3>Atribución de una Obra o Autor (<code>&lt;cite&gt;</code>)</h3>
-            <p>Usa <code>&lt;cite&gt;</code> para el título de una obra creativa (libro, película) o el nombre de un autor, no para el texto de la cita en sí.</p>
-            <p>Mi libro favorito es <cite>Cien años de soledad</cite>.</p>
-            <pre><code>
-&lt;p&gt;Mi libro favorito es &lt;cite&gt;Cien años de soledad&lt;/cite&gt;.&lt;/p&gt;
-            </code></pre>
+        <section class="features-section">
+            <h2>¿Qué encontrarás aquí?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Proyectos Destacados</h3>
+                    <p>Accede a nuestros repositorios principales, desde software de código abierto hasta experimentos personales.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Contribuye</h3>
+                    <p>¿Te interesa colaborar? Aprende cómo puedes unirte a nuestros proyectos y dejar tu huella.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Documentación</h3>
+                    <p>Encuentra guías detalladas y la documentación de nuestros proyectos para facilitar tu exploración.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Actualizaciones Constantes</h3>
+                    <p>Sigue de cerca nuestro trabajo con las últimas actualizaciones y commits en tiempo real.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Comunidad</h3>
+                    <p>Participa en discusiones, reporta problemas y forma parte de la comunidad NeTenebrae.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Recursos Educativos</h3>
+                    <p>Descubre recursos y enlaces útiles para aprender más sobre desarrollo y control de versiones.</p>
+                </div>
+            </div>
         </section>
-
-        <section id="subitems-html">
-            ---
-            <h2>4. Cómo Agregar Sub-ítems a una Tabla HTML</h2>
-            <p>Aunque no hay una etiqueta directa para "sub-ítems", puedes simularlos de estas maneras:</p>
-
-            <h3>Opción 1: Usando `rowspan`</h3>
-            <p>Cuando un ítem principal tiene varias características en columnas separadas.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Característica</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="3"><strong>Laptop X</strong></td>
-                        <td>Procesador</td>
-                        <td>Intel Core i7</td>
-                    </tr>
-                    <tr>
-                        <td>RAM</td>
-                        <td>16 GB</td>
-                    </tr>
-                    <tr>
-                        <td>Almacenamiento</td>
-                        <td>512 GB SSD</td>
-                    </tr>
-                </tbody>
-            </table>
-            <pre><code>
-&lt;td rowspan="3"&gt;&lt;strong&gt;Laptop X&lt;/strong&gt;&lt;/td&gt;
-&lt;!-- ...las siguientes 2 filas ya no necesitan la celda del producto ... --&gt;
-            </code></pre>
-
-            <h3>Opción 2: Anidando Listas en una Celda</h3>
-            <p>Si los "sub-ítems" son una lista de puntos o detalles dentro de una celda.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Fase</th>
-                        <th>Sub-tareas</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Planificación</td>
-                        <td>
-                            <ul>
-                                <li>Reunión inicial</li>
-                                <li>Análisis de requisitos</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <pre><code>
-&lt;td&gt;
-    &lt;ul&gt;
-        &lt;li&gt;Elemento 1&lt;/li&gt;
-        &lt;li&gt;Elemento 2&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/td&gt;
-            </code></pre>
-
-            <h3>Opción 3: Usando Clases CSS para Estilos</h3>
-            <p>Para jerarquías visuales simples con sangría y otros estilos.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Categoría</th>
-                        <th>Artículo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="main-item">
-                        <td>Electrónica</td>
-                        <td>Total Electrónica</td>
-                    </tr>
-                    <tr>
-                        <td class="sub-item"></td>
-                        <td class="sub-item">Teléfonos móviles</td>
-                    </tr>
-                </tbody>
-            </table>
-            <pre><code>
-&lt;tr class="main-item"&gt;...&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="sub-item"&gt;&lt;/td&gt;&lt;td class="sub-item"&gt;...&lt;/td&gt;&lt;/tr&gt;
-            </code></pre>
-            <p><em>(Esta opción funciona mejor si luego le añades CSS para darle estilo a las clases `main-item` y `sub-item`).</em></p>
-        </section>
-
-        <section id="codigo-html">
-            ---
-            <h2>5. Cómo Agregar Visualización de Código HTML</h2>
-            <p>Para mostrar código en tus páginas:</p>
-
-            <h3>Fragmentos de Código en Línea (<code>&lt;code&gt;</code>)</h3>
-            <p>Para indicar que un pequeño fragmento de texto es código. El navegador le da una fuente monoespaciada.</p>
-            <p>La etiqueta para un enlace es <code>&lt;a&gt;</code>.</p>
-            <pre><code>
-&lt;p&gt;La etiqueta para un enlace es &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-            </code></pre>
-
-            <h3>Bloques de Código Preformateado (<code>&lt;pre&gt;</code>)</h3>
-            <p>Mantiene los espacios, saltos de línea e indentación tal como los escribes. Ideal para bloques de código largos.</p>
-            <pre>
-function saludar(nombre) {
-    console.log("Hola, " + nombre + "!");
-}
-saludar("Mundo");
-            </pre>
-            <pre><code>
-&lt;pre&gt;
-function saludar(nombre) {
-    console.log("Hola, " + nombre + "!");
-}
-saludar("Mundo");
-&lt;/pre&gt;
-            </code></pre>
-
-            <h3>Combinación (<code>&lt;pre&gt;&lt;code&gt;</code>)</h3>
-            <p>La mejor práctica: <code>&lt;pre&gt;</code> mantiene el formato y <code>&lt;code&gt;</code> le da semántica de código. Recuerda usar entidades HTML para <code>&lt;</code> (`&amp;lt;`) y <code>&gt;</code> (`&amp;gt;`).</p>
-            <pre><code>
-&lt;pre&gt;&lt;code class="language-html"&gt;
-&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html&amp;gt;
-&amp;lt;head&amp;gt;
-    &amp;lt;title&amp;gt;Ejemplo&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-    &amp;lt;h1&amp;gt;Mi Página&amp;lt;/h1&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-            </code></pre>
-
-            <h3>Resaltado de Sintaxis (con JavaScript)</h3>
-            <p>Para colores y temas como en los editores de código (ej. Highlight.js o Prism.js). **Esto solo funciona si enlazas librerías JavaScript externas**, no es HTML puro. Para este ejemplo, solo se muestra el contenedor sin la funcionalidad de resaltado.</p>
-            <pre><code class="language-javascript">
-// Ejemplo de JavaScript con resaltado de sintaxis
-function calcularArea(radio) {
-    return Math.PI * radio * radio;
-}
-const pi = Math.PI;
-console.log(calcularArea(5));
-            </code></pre>
-        </section>
-
-        <section id="imprescindible-html">
-            ---
-            <h2>6. Lo Imprescindible del HTML Básico (Resumen)</h2>
-            <p>Para crear cualquier página web sencilla y bien estructurada, estos son los elementos y conceptos clave:</p>
-            <ul>
-                <li><strong>Estructura Fundamental:</strong> <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> (con `charset` y `viewport`), <code>&lt;title&gt;</code> y <code>&lt;body&gt;</code>.</li>
-                <li><strong>Contenido de Texto:</strong> <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> (encabezados), <code>&lt;p&gt;</code> (párrafos), <code>&lt;strong&gt;</code> (importancia), <code>&lt;em&gt;</code> (énfasis).</li>
-                <li><strong>Enlaces:</strong> <code>&lt;a href="..."&gt;</code>.</li>
-                <li><strong>Imágenes:</strong> <code>&lt;img src="..." alt="..."&gt;</code> (<code>alt</code> es vital).</li>
-                <li><strong>Listas:</strong> <code>&lt;ul&gt;</code>/<code>&lt;ol&gt;</code> con <code>&lt;li&gt;</code>.</li>
-                <li><strong>Etiquetas Semánticas (HTML5):</strong> <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>.</li>
-                <li><strong>Conceptos Clave:</strong> Etiquetas de apertura/cierre, atributos, etiquetas de cierre automático.</li>
-            </ul>
-        </section>
-    </main>
+    </div>
 
     <footer>
-        ---
-        <p>&copy; 2025 Guía HTML. Todos los derechos reservados. Creado para el aprendizaje.</p>
-        <p>Visita <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN Web Docs</a> para más información sobre HTML.</p>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> NeTenebrae. Todos los derechos reservados. | Desarrollado con ❤️ y Código.</p>
+            <p>¿Preguntas? <a href="mailto:contacto@netenebrae.com">Contáctanos</a></p>
+        </div>
     </footer>
 
-                <ul>
-                <li><strong>Párrafos:</strong> <code>&lt;p&gt;Este es un párrafo de texto.&lt;/p&gt;</code></li>
-                <li><strong>Encabezados:</strong> <code>&lt;h1&gt;</code> al <code>&lt;h6&gt;</code></li>
-                <li><strong>Negrita:</strong> <code>&lt;strong&gt;Texto importante&lt;/strong&gt;</code> <strong>(semántico)</strong> o <code>&lt;b&gt;Texto en negrita&lt;/b&gt;</code> <b>(visual)</b>.</li>
-                <li><strong>Cursiva:</strong> <code>&lt;em&gt;Texto enfatizado&lt;/em&gt;</code> <em>(semántico)</em> o <code>&lt;i&gt;Texto en cursiva&lt;/i&gt;</code> <i>(visual)</i>.</li>
-                <li><strong>Salto de línea:</strong> <code>&lt;br&gt;</code> (no crea un nuevo párrafo).</li>
-                <li><strong>Línea horizontal:</strong> <code>&lt;hr&gt;</code> (separa temáticamente).</li>
-                <li><strong>Listas:</strong>
-                    <ul>
-                        <li>Desordenadas (viñetas): <code>&lt;ul&gt;&lt;li&gt;Elemento&lt;/li&gt;&lt;/ul&gt;</code></li>
-                    </ul>
-                    <ol>
-                        <li>Ordenadas (numeradas): <code>&lt;ol&gt;&lt;li&gt;Elemento&lt;/li&gt;&lt;/ol&gt;</code></li>
-                    </ol>
-                </li>
-            </ul>
-        </section>
-<!-- #region Jugando con las funciones que descubrí de Kofi -->
-<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('netenebrae', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Apoyame!',
-    'floating-chat.donateButton.background-color': '#323842',
-    'floating-chat.donateButton.text-color': '#fff'
-  });
-</script>
-
-<script src="https://gumroad.com/js/gumroad.js"></script>
-<a class="gumroad-button" href="https://netenebrae.gumroad.com/l/NeTenebraeSegundoCerebro" data-gumroad-overlay-checkout="true">Comprar en</a>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
