@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.MainGrid {
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: black;
+
+    display: grid;
+    grid-template: 
+
+    ". . ." 
+    "Header     Header      Header"     minmax(200px, 1fr)
+    "Sidebar    Projects    Projects"   minmax(100px, 10fr)
+    "Footer     Footer      Footer"     minmax(100px, 1fr)
+    /   
+minmax(100px, 10%) minmax(100px, 1fr) minmax(100px, 1fr) 
+    ;
+
+    outline: 5px solid red;
+
+    gap: 5px;
+}
+
+.MainGrid_Header {
+    background-color: azure;
+
+    grid-area: Header;
+}
+
+.MainGrid_Sidebar {
+    background-color: lightcoral;
+
+    grid-area: Sidebar;
+}
+
+.MainGrid_Projects {
+    display: grid;
+    grid-area: Projects;
+    width: 100%;
+    height: 100%;
+
+    background-color: lightgreen;
+
+    grid-template-columns:  1fr 1fr;
+    grid-template-rows: minmax(10%, 1fr) 
+                        10fr 
+                        10fr 
+                        10fr;
+
+}
+.MainGrid_Project_Title {
+    background-color: rgb(219, 112, 23);
+    grid-column: 1 / -1;
+
+}
+
+.MainGrid_Projects_Card {
+
+} 
+
+.MainGrid_Footer {
+    background-color: lightseagreen;
+
+    grid-area: Footer;
+}
+
