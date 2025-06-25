@@ -4,29 +4,42 @@
     margin: 0;
 }
 
-
-
-.MainGrid {
+.Container {
+    background-color: rgb(43, 255, 0);
 
     height: 100vh;
     width: 100vw;
 
-    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+}
+
+
+.MainGrid {
+    height: 100%;
+    width: 100%;
+
+    background-color: rgb(137, 9, 241);
+
+    outline: 3px solid red;
+    border-radius: 1%;
 
     display: grid;
     grid-template: 
 
     ". . ." 
-    "Header     Header      Header"     minmax(200px, 1fr)
-    "Sidebar    Projects    Projects"   minmax(100px, 10fr)
-    "Footer     Footer      Footer"     minmax(100px, 1fr)
+    "Header     Header      Header"     minmax(20%, 1fr)
+    "Sidebar    Projects    Projects"   minmax(65%, 10fr)
+    "Footer     Footer      Footer"     minmax(15%, 1fr)
     /   
-minmax(100px, 10%) minmax(100px, 1fr) minmax(100px, 1fr) 
-    ;
-
-    outline: 5px solid red;
+minmax(100px, 10%) minmax(100px, 1fr) minmax(100px, 1fr) ;
 
     gap: 5px;
+
+    overflow: hidden;
 }
 
 .MainGrid_Header {
@@ -50,20 +63,31 @@ minmax(100px, 10%) minmax(100px, 1fr) minmax(100px, 1fr)
     background-color: lightgreen;
 
     grid-template-columns:  1fr 1fr;
-    grid-template-rows: minmax(10%, 1fr) 
-                        10fr 
-                        10fr 
-                        10fr;
+    grid-template-rows: minmax(15%, 1fr) 
+                        minmax(10%, 5fr)
+                        minmax(10%, 5fr) 
+                        ;
+
+    gap: 5px;                        
 
 }
 .MainGrid_Project_Title {
     background-color: rgb(219, 112, 23);
     grid-column: 1 / -1;
 
+    display:flex;
+
+    justify-content: space-around;
+    align-items: center;
+
 }
 
 .MainGrid_Projects_Card {
+    background-color: lightgrey;
+    align-self: stretch;
+    margin: 5px;
 
+    border-radius: 5%;
 } 
 
 .MainGrid_Footer {
