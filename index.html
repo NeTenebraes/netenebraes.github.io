@@ -1,38 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeTenebrae</title>
-
-    <link rel="stylesheet" href="./css/index.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="description" content="Blog minimalista oscuro y monocromático.">
+  <title>Mi Blog</title>
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="Container">
-    <main class="MainGrid">
-        <Header class="MainGrid_Header">
-            Header
-        </Header>
-        <nav class="MainGrid_Sidebar">
-            Sidebar
-        </nav>
-        <section class="MainGrid_Projects">
-            <h2 class="MainGrid_Project_Title">
-                Projects
-            </h2>
-            <article class="MainGrid_Projects_Card">
-                Project 1
-            </article>
-            <article class="MainGrid_Projects_Card">
-                Project 2 
-            </article>
-            <article class="MainGrid_Projects_Card">
-                Project 3
-            </article>      
-        </section>
-        <footer class="MainGrid_Footer">
-            Footer
-        </footer>
-    </main>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">Mi Blog</a>
+      <nav class="nav">
+        <a href="/">Inicio</a>
+        <a href="#">Archivo</a>
+        <a href="#">Sobre</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="site-main container">
+    <section class="posts">
+      <article class="post-card">
+        <a class="post-link" href="post.html">
+          <h2 class="post-title">Primer post de ejemplo</h2>
+          <p class="post-excerpt">Un adelanto breve del contenido para invitar a leer la entrada completa.</p>
+          <time class="post-date" datetime="2025-10-16">16 Oct 2025</time>
+        </a>
+      </article>
+
+      <article class="post-card">
+        <a class="post-link" href="post.html">
+          <h2 class="post-title">Segundo post de ejemplo</h2>
+          <p class="post-excerpt">Otra descripción corta y directa, manteniendo el estilo monocromático y minimalista.</p>
+          <time class="post-date" datetime="2025-09-02">2 Sep 2025</time>
+        </a>
+      </article>
+
+      <article class="post-card">
+        <a class="post-link" href="post.html">
+          <h2 class="post-title">Tercer post de ejemplo</h2>
+          <p class="post-excerpt">Texto introductorio conciso para un post más largo, centrado en el contenido.</p>
+          <time class="post-date" datetime="2025-07-21">21 Jul 2025</time>
+        </a>
+      </article>
+    </section>
+
+    <nav class="pager">
+      <a class="btn" href="#">← Anteriores</a>
+      <a class="btn" href="#">Siguientes →</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 · Mi Blog</p>
+    </div>
+  </footer>
 </body>
 </html>
