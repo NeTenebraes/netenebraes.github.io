@@ -1,63 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0b0b0c">
-  <meta name="description" content="Blog minimalista oscuro y monocromático.">
-  <title>Mi Blog</title>
-  <link rel="preload" href="css/index.css" as="style">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeTenebraes — Ecos del Código</title>
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="/">Mi Blog</a>
+      <div class="brand">Ecos del Código</div>
       <nav class="nav">
-        <a href="/">Inicio</a>
+        <a href="#">Inicio</a>
+        <a href="#">Proyectos</a>
         <a href="#">Archivo</a>
-        <a href="#">Sobre</a>
+        <a href="#">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="site-main container">
-    <section class="posts">
+  <main class="site-main">
+    <div class="container posts">
+
+      <!-- Tarjeta de perfil poética -->
+      <section id="github-profile" class="post-card">
+        <div class="post-link" style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+          <img src="https://github.com/NeTenebraes.png" alt="Foto de perfil de GitHub"
+               style="width: 110px; height: 110px; border-radius: 50%; border: 1px solid var(--line); box-shadow: var(--shadow-soft);">
+          <div>
+            <h2 class="post-title">NeTenebraes</h2>
+            <p class="post-excerpt">
+              Entusiasta del Pen Testing y la Automatización con Scripts. <br>
+              Creador de la neCyberWIKI~
+            </p>
+  
+            <div style="margin-top: 0.5rem;">
+              <img src="https://img.shields.io/github/followers/NeTenebraes?logo=github&style=flat&color=888" alt="Seguidores">
+              <img src="https://img.shields.io/badge/Arch%20Linux-Minimal-blue?style=flat&logo=arch-linux" alt="Arch Linux">
+            </div>
+            <a href="https://github.com/NeTenebraes" target="_blank" class="btn" style="margin-top: 1rem;">Ver GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bloque de presentación principal -->
       <article class="post-card">
-        <a class="post-link" href="post.html">
-          <h2 class="post-title">Primer post de ejemplo</h2>
-          <p class="post-excerpt">Un adelanto breve del contenido para invitar a leer la entrada completa.</p>
-          <time class="post-date" datetime="2025-10-16">16 Oct 2025</time>
-        </a>
+        <div class="post-link">
+          <h2 class="post-title">Reflexiones en el Terminal</h2>
+          <p class="post-excerpt">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+            Suspendisse vel lacus ut sem fringilla tempus.  
+            La lógica y la poesía se encuentran en cada línea escrita entre sombras.
+          </p>
+          <p class="post-date">publicado hace un instante</p>
+          <a href="#" class="btn">Leer más</a>
+        </div>
       </article>
 
       <article class="post-card">
-        <a class="post-link" href="post.html">
-          <h2 class="post-title">Segundo post de ejemplo</h2>
-          <p class="post-excerpt">Otra descripción corta y directa, manteniendo el estilo monocromático y minimalista.</p>
-          <time class="post-date" datetime="2025-09-02">2 Sep 2025</time>
-        </a>
+        <div class="post-link">
+          <h2 class="post-title">El Silencio de los Procesos</h2>
+          <p class="post-excerpt">
+            Bajo el zumbido del ventilador, los demonios del sistema murmuran.  
+            Cada bit tiene un suspiro, cada exploit una historia.
+          </p>
+          <p class="post-date">entre líneas del kernel</p>
+          <a href="#" class="btn">Leer más</a>
+        </div>
       </article>
 
       <article class="post-card">
-        <a class="post-link" href="post.html">
-          <h2 class="post-title">Tercer post de ejemplo</h2>
-          <p class="post-excerpt">Texto introductorio conciso para un post más largo, centrado en el contenido.</p>
-          <time class="post-date" datetime="2025-07-21">21 Jul 2025</time>
-        </a>
+        <div class="post-link">
+          <h2 class="post-title">Constelaciones en Bash</h2>
+          <p class="post-excerpt">
+            Los scripts nacen del caos, puntos de luz que ordenan la noche de la shell.  
+            Cada comando, un verso breve en la sinfonía del control.
+          </p>
+          <p class="post-date">dentro de /home/poet</p>
+          <a href="#" class="btn">Leer más</a>
+        </div>
       </article>
-    </section>
 
-    <nav class="pager">
-      <a class="btn" href="#">← Anteriores</a>
-      <a class="btn" href="#">Siguientes →</a>
-    </nav>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 · Mi Blog</p>
+    <div class="container" style="text-align: center;">
+      <p>«El código también canta, si lo escuchas con paciencia.»</p>
+      <p>© 2025 NeTenebraes — Arquitectura digital inspirada por la quietud del bit.</p>
     </div>
   </footer>
 </body>
