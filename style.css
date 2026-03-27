@@ -4,17 +4,19 @@
 - Scaling: Mobile-first approach for Grid & Flex
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400&display=swap');
+
 /* --- 1. VARIABLES & RESET --- */
 :root {
     --bg: #000;
     --card: #0d1117;
-    --accent: #00ff41;
+    --accent: #00f2ff;
     --text: #c9d1d9;
     --border: #30363d;
     --shadow: rgba(0, 255, 65, 0.2);
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-
+    --font-main: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
 }
 
 * {
@@ -29,6 +31,7 @@ html {
 }
 
 body {
+    font-family: var(--font-main); /* Cambiamos la fuente aquí */
     background-color: var(--bg);
     color: var(--text);
     font-family: 'Segoe UI', system-ui, sans-serif;
@@ -36,14 +39,16 @@ body {
     overflow-x: hidden;
 }
 
+/* HEADER */
+
 .main-header {
-    position: fixed; /* Se queda fijo al hacer scroll */
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    padding: 20px 0;
-    background: rgba(0, 0, 0, 0.7); /* Transparente */
-    backdrop-filter: blur(10px);    /* Efecto cristal */
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(10px);   
     border-bottom: 1px solid var(--border);
 }
 
@@ -64,6 +69,25 @@ body {
 }
 
 .logo span { color: var(--accent); }
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.logo-img {
+    height: 40px; 
+    width: auto;
+    filter: drop-shadow(0 0 5px var(--shadow)); 
+    transition: var(--transition);
+}
+
+/* Efecto al pasar el mouse */
+.logo-link:hover .logo-img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 3px var(--accent));}
 
 .nav-links {
     display: flex;
@@ -105,7 +129,8 @@ body {
 }
 
 .item {
-    background: var(--card);
+    background: rgba(13, 17, 23, 0.85); /* 85% opacidad, usa tu color --card */
+    backdrop-filter: blur(8px);       /* Efecto cristal para mejorar la legibilidad */
     border: 1px solid var(--border);
     border-radius: 24px;
     padding: 30px;
@@ -126,7 +151,6 @@ body {
     align-items: center;
     text-align: center;
     justify-content: center;
-    opacity: 0.8;
 }
 
 .avatar {
@@ -138,6 +162,8 @@ body {
     box-shadow: 0 0 20px var(--shadow);
     margin-bottom: 20px;
     transition: var(--transition);
+
+    margin-bottom: 100px;
 }
 
 .avatar:hover {
@@ -154,7 +180,7 @@ body {
 }
 
 /* --- 4. TECH STACK --- */
-.tech { 
+.me { 
     grid-column: span 5;
     grid-row: span 3;
 }
@@ -170,6 +196,8 @@ body {
     background: #21262d;
     padding: 6px 16px;
     border-radius: 8px;
+    width: 150px;
+    height: 150px;
     border: 1px solid var(--border);
     font-family: 'Cascadia Code', monospace;
     font-size: 0.85rem;
@@ -239,12 +267,16 @@ body {
 }
 
 /* --- 6. CONTACT (SECTION 03) --- */
-.contact-grid .contact-info { grid-column: span 6; }
+.social { 
+    grid-column: span 5;
+    flex-direction: row;
+}
+
 .contact-grid .mail-box { 
-    grid-column: span 5; 
+    grid-column: span 6; 
     border-color: var(--accent); 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -324,21 +356,15 @@ body {
     pointer-events: none; /* Para que no interfiera con los clics */
 }
 
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: var(--transition);
-}
 
-.logo-img {
-    height: 40px; 
-    width: auto;
-    filter: drop-shadow(0 0 5px var(--shadow)); 
-    transition: var(--transition);
-}
+/* BACKGROUND */
 
-/* Efecto al pasar el mouse */
-.logo-link:hover .logo-img {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 10px var(--accent));}
+#matrix-bg {
+    position: fixed; /* Se queda fijo al hacer scroll */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ancho total de la pantalla */
+    height: 100vh; /* Alto total de la pantalla */
+    z-index: -1;   /* Lo envía detrás de todo el contenido */
+    display: block;
+}
