@@ -1,0 +1,235 @@
+/* DEV NOTES
+  - Project: NeCyber Portfolio
+  - Theme: Arch-Linux / Obsidian-Dark
+  - Scaling: Mobile-first approach for Grid & Flex
+*/
+
+/* --- 1. VARIABLES & RESET --- */
+:root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --accent: #00ff41;
+    --text: #c9d1d9;
+    --border: #30363d;
+    --shadow: rgba(0, 255, 65, 0.2);
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- 2. LAYOUT COMPONENTS --- */
+.page-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    border-bottom: 1px solid var(--border);
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.bento-grid {
+    display: grid;
+    gap: 20px;
+    max-width: 1100px;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.item:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- 3. IDENTITY (SECTION 01) --- */
+.profile { 
+    grid-column: span 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent);
+    box-shadow: 0 0 20px var(--shadow);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.avatar:hover {
+    transform: scale(1.05) rotate(3deg);
+    border-color: #fff;
+}
+
+.tagline {
+    color: var(--accent);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* --- 4. TECH STACK --- */
+.tech { grid-column: span 2; }
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tech-tag {
+    background: #21262d;
+    padding: 6px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-family: 'Cascadia Code', monospace;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.tech-tag:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* --- 5. PROJECTS (SECTION 02) --- */
+.section-title { margin-bottom: 30px; color: var(--accent); font-family: monospace; }
+
+.projects-slider {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    padding: 20px 0 40px 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+}
+
+/* DEV: Customize Scrollbar for Webkit */
+.projects-slider::-webkit-scrollbar { height: 6px; }
+.projects-slider::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+
+.project {
+    flex: 0 0 600px;
+    min-height: 450px;
+    scroll-snap-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.project.nebspwm { flex: 0 0 750px; padding: 0; }
+.project-content { padding: 30px; }
+
+.project-image-container {
+    flex-grow: 1;
+    background: #000;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.project:hover .project-img { opacity: 1; transform: scale(1.02); }
+
+.badge {
+    background: rgba(0, 255, 65, 0.1);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* --- 6. CONTACT (SECTION 03) --- */
+.contact-grid .contact-info { grid-column: span 3; }
+.contact-grid .mail-box { 
+    grid-column: span 1; 
+    border-color: var(--accent); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pill {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px 0 0;
+    border-radius: 50px;
+    background: var(--border);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.pill:hover { background: var(--accent); color: #000; }
+
+/* --- 7. ANIMATIONS & UTILS --- */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    font-family: monospace;
+    color: var(--accent);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+}
+
+/* --- 8. RESPONSIVE ENGINE --- */
+@media (max-width: 900px) {
+    .project { flex: 0 0 85vw; }
+}
+
+@media (max-width: 768px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .item, .profile, .tech, .contact-info, .mail-box { grid-column: span 1 !important; }
+    .avatar { width: 120px; height: 120px; }
+    .page-section { padding: 80px 20px; }
+}
