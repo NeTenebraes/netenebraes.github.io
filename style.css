@@ -31,7 +31,8 @@ html {
 }
 
 body {
-    font-family: var(--font-main); /* Cambiamos la fuente aquí */
+    font-family: var(--font-main);
+    /* Cambiamos la fuente aquí */
     background-color: var(--bg);
     color: var(--text);
     font-family: 'Segoe UI', system-ui, sans-serif;
@@ -47,8 +48,8 @@ body {
     width: 100%;
     z-index: 1000;
     padding: 10px 0;
-    background: rgba(0, 0, 0, 0.7); 
-    backdrop-filter: blur(10px);   
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
 }
 
@@ -68,7 +69,9 @@ body {
     letter-spacing: 2px;
 }
 
-.logo span { color: var(--accent); }
+.logo span {
+    color: var(--accent);
+}
 
 .logo-link {
     display: flex;
@@ -78,16 +81,17 @@ body {
 }
 
 .logo-img {
-    height: 40px; 
+    height: 40px;
     width: auto;
-    filter: drop-shadow(0 0 5px var(--shadow)); 
+    filter: drop-shadow(0 0 5px var(--shadow));
     transition: var(--transition);
 }
 
 /* Efecto al pasar el mouse */
 .logo-link:hover .logo-img {
     transform: scale(1.1);
-    filter: drop-shadow(0 0 3px var(--accent));}
+    filter: drop-shadow(0 0 3px var(--accent));
+}
 
 .nav-links {
     display: flex;
@@ -114,7 +118,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;    
+    padding: 40px 20px;
     border-bottom: 1px solid var(--border);
     scroll-snap-align: start;
     position: relative;
@@ -129,8 +133,10 @@ body {
 }
 
 .item {
-    background: rgba(13, 17, 23, 0.85); /* 85% opacidad, usa tu color --card */
-    backdrop-filter: blur(8px);       /* Efecto cristal para mejorar la legibilidad */
+    background: rgba(13, 17, 23, 0.90);
+    /* 85% opacidad, usa tu color --card */
+    backdrop-filter: blur(15px);
+    /* Efecto cristal para mejorar la legibilidad */
     border: 1px solid var(--border);
     border-radius: 24px;
     padding: 30px;
@@ -143,7 +149,7 @@ body {
 }
 
 /* --- 3. IDENTITY (SECTION 01) --- */
-.profile { 
+.profile {
     grid-column: span 3;
     grid-row: span 4;
     display: flex;
@@ -180,7 +186,7 @@ body {
 }
 
 /* --- 4. TECH STACK --- */
-.me { 
+.me {
     grid-column: span 5;
     grid-row: span 3;
 }
@@ -211,7 +217,11 @@ body {
 }
 
 /* --- 5. PROJECTS (SECTION 02) --- */
-.section-title { margin-bottom: 30px; color: var(--accent); font-family: monospace; }
+.section-title {
+    margin-bottom: 30px;
+    color: var(--accent);
+    font-family: monospace;
+}
 
 .projects-slider {
     display: flex;
@@ -226,8 +236,14 @@ body {
 }
 
 /* DEV: Customize Scrollbar for Webkit */
-.projects-slider::-webkit-scrollbar { height: 60px; }
-.projects-slider::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+.projects-slider::-webkit-scrollbar {
+    height: 60px;
+}
+
+.projects-slider::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
 
 .project {
     flex: 0 0 600px;
@@ -238,8 +254,14 @@ body {
     flex-direction: column;
 }
 
-.project.nebspwm { flex: 0 0 750px; padding: 0; }
-.project-content { padding: 30px; }
+.project.nebspwm {
+    flex: 0 0 750px;
+    padding: 0;
+}
+
+.project-content {
+    padding: 30px;
+}
 
 .project-image-container {
     flex-grow: 1;
@@ -255,7 +277,10 @@ body {
     transition: var(--transition);
 }
 
-.project:hover .project-img { opacity: 1; transform: scale(1.02); }
+.project:hover .project-img {
+    opacity: 1;
+    transform: scale(1.02);
+}
 
 .badge {
     background: rgba(0, 255, 65, 0.1);
@@ -267,14 +292,14 @@ body {
 }
 
 /* --- 6. CONTACT (SECTION 03) --- */
-.social { 
+.social {
     grid-column: span 5;
     flex-direction: row;
 }
 
-.contact-grid .mail-box { 
-    grid-column: span 6; 
-    border-color: var(--accent); 
+.contact-grid .mail-box {
+    grid-column: span 6;
+    border-color: var(--accent);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -293,7 +318,10 @@ body {
     transition: var(--transition);
 }
 
-.pill:hover { background: var(--accent); color: #000; }
+.pill:hover {
+    background: var(--accent);
+    color: #000;
+}
 
 /* --- 7. ANIMATIONS & UTILS --- */
 .scroll-indicator {
@@ -305,31 +333,61 @@ body {
 }
 
 @keyframes bounce {
-0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-40% {transform: translateY(-10px);}
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
 }
 
 /* --- 8. RESPONSIVE ENGINE --- */
 @media (max-width: 900px) {
-    .project { flex: 0 0 85vw; }
+    .project {
+        flex: 0 0 85vw;
+    }
 }
 
 @media (max-width: 768px) {
-    .bento-grid { grid-template-columns: 1fr; }
-    .item, .profile, .tech, .contact-info, .mail-box { grid-column: span 1 !important; }
-    .avatar { width: 120px; height: 120px; }
-    .page-section { padding: 80px 20px; }
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .item,
+    .profile,
+    .tech,
+    .contact-info,
+    .mail-box {
+        grid-column: span 1 !important;
+    }
+
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .page-section {
+        padding: 80px 20px;
+    }
 }
 
 /* --- FONDO DECORATIVO INTEGRADO --- */
 .bg-overlay {
-    position: fixed; /* Se queda fijo mientras haces scroll */
+    position: fixed;
+    /* Se queda fijo mientras haces scroll */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: #000;
-    z-index: -1; /* Lo envía detrás de todo el contenido */
+    z-index: -1;
+    /* Lo envía detrás de todo el contenido */
     overflow: hidden;
 }
 
@@ -337,8 +395,8 @@ body {
 .bg-grid {
     position: absolute;
     inset: 0;
-    background-image: 
-        linear-gradient(to right, #4f4f4f2e 1px, transparent 1px), 
+    background-image:
+        linear-gradient(to right, #4f4f4f2e 1px, transparent 1px),
         linear-gradient(to bottom, #8080800a 1px, transparent 1px);
     background-size: 14px 24px;
 }
@@ -353,18 +411,23 @@ body {
     width: 1000px;
     border-radius: 50%;
     background: radial-gradient(circle 400px at center, #fbfbfb36, #000);
-    pointer-events: none; /* Para que no interfiera con los clics */
+    pointer-events: none;
+    /* Para que no interfiera con los clics */
 }
 
 
 /* BACKGROUND */
 
 #matrix-bg {
-    position: fixed; /* Se queda fijo al hacer scroll */
+    position: fixed;
+    /* Se queda fijo al hacer scroll */
     top: 0;
     left: 0;
-    width: 100vw; /* Ancho total de la pantalla */
-    height: 100vh; /* Alto total de la pantalla */
-    z-index: -1;   /* Lo envía detrás de todo el contenido */
+    width: 100vw;
+    /* Ancho total de la pantalla */
+    height: 100vh;
+    /* Alto total de la pantalla */
+    z-index: -1;
+    /* Lo envía detrás de todo el contenido */
     display: block;
 }
