@@ -192,6 +192,12 @@ body {
     justify-content: center;
 }
 
+
+.tech-tags-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .tech-tag {
     background: #161b22;
     padding: 8px 12px;
@@ -199,6 +205,9 @@ body {
     font-family: var(--font-mono);
     font-size: 0.8rem;
     border-radius: 4px;
+    height: 100px;
+    width: 100px;
+    margin: 2px;
 }
 
 .tech-tag:hover {
