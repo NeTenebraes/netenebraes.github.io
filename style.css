@@ -51,72 +51,302 @@ body {
 }
 
 
-/* HEADER */
-
+/* --- 1. HEADER ESTRUCTURAL --- */
 .main-header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .nav-container {
-    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: var(--font-mono);
 }
 
-.logo {
-    font-family: monospace;
-    font-weight: bold;
-    color: var(--text);
-    letter-spacing: 2px;
-}
-
-.logo span {
-    color: var(--accent);
-}
-
+/* --- 2. LOGO Y GLITCH --- */
 .logo-link {
     display: flex;
     align-items: center;
+    gap: 10px;
     text-decoration: none;
-    transition: var(--transition);
+    color: var(--text);
 }
 
 .logo-img {
-    height: 40px;
+    height: 32px;
     width: auto;
-    filter: drop-shadow(0 0 5px var(--shadow));
-    transition: var(--transition);
+    transition: filter 0.3s ease;
 }
 
 .logo-link:hover .logo-img {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 3px var(--accent));
+    filter: drop-shadow(0 0 8px var(--accent));
 }
 
+/* Fix Glitch: Asegurar display inline-block para que funcione la posición */
+.logo-text {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo-text::before,
+.logo-text::after {
+    content: "NeTenebrae";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    /* Oculto por defecto */
+}
+
+.logo-link:hover .logo-text::before {
+    color: #0ff;
+    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+    opacity: 0.8;
+}
+
+.logo-link:hover .logo-text::after {
+    color: #f0f;
+    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+    opacity: 0.8;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    30% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    90% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* --- 3. LINKS (SIN SALTOS) --- */
 .nav-links {
-    display: none;
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text);
     font-size: 0.9rem;
-    font-family: monospace;
-    transition: var(--transition);
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    /* Reservar espacio para evitar saltos */
+    line-height: 1.2;
+    box-sizing: border-box;
+}
+
+.nav-links a::before {
+    content: "$ ";
+    color: var(--accent);
+    margin-right: 8px;
+    opacity: 0.6;
 }
 
 .nav-links a:hover {
-    color: var(--accent);
+    background-color: var(--accent);
+    color: #000;
+    border: 1px solid var(--accent);
+    font-weight: normal;
 }
 
-/* --- 2. LAYOUT COMPONENTS --- */
+.nav-links a:hover::before {
+    animation: terminalBlink 0.35s ease infinite;
+    color: #000;
+}
+
+@keyframes terminalBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* --- 4. SCAN LINE (300PX) --- */
+.main-header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: -300px;
+    /* Debe empezar igual al ancho para ocultarse */
+    width: 300px;
+    /* Ancho solicitado */
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    box-shadow: 0 0 10px var(--accent);
+    animation: scanPorts 4s linear infinite;
+    pointer-events: none;
+    /* Para que no bloquee los clicks */
+}
+
+@keyframes scanPorts {
+    0% {
+        left: -300px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* --- RESPONSIVE / BURGER MENU --- */
+
+/* Escondemos el checkbox y el icono en Desktop */
+.nav-toggle {
+    display: none;
+}
+
+.nav-burger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--accent);
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* --- ESCONDER BURGER EN DESKTOP --- */
+.nav-burger {
+    display: none;
+}
+
+/* --- RESPONSIVE / BURGER MENU --- */
+/* --- RESPONSIVE / BURGER MENU --- */
+@media (max-width: 768px) {
+
+    /* Mostrar la hamburguesa */
+    .nav-burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-burger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--accent);
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    /* MENÚ FLOTANTE */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 15px);
+        left: 15px;
+        width: calc(100% - 30px);
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 0;
+        /* Padding pequeño para dar aire */
+        border-radius: 15px;
+        border: 1px solid var(--accent);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        gap: 0;
+    }
+
+    /* Fuerza a que cada elemento de la lista ocupe el 100% */
+    .nav-links li {
+        width: 100%;
+        list-style: none;
+    }
+
+    /* Enlaces dentro del menú */
+    .nav-links a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Centramos para que se vea simétrico */
+        padding: 20px 0;
+        /* Padding vertical uniforme */
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.2s ease;
+    }
+
+    /* Quitar borde al último elemento */
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    /* HOVER SÓLIDO Y UNIFORME */
+    .nav-links a:hover {
+        background-color: var(--accent);
+        color: #000;
+        font-weight: bold;
+    }
+
+    /* Ajuste para el símbolo $ */
+    .nav-links a::before {
+        margin-right: 12px;
+    }
+
+    /* Lógica: Si el checkbox está marcado */
+    .nav-toggle:checked~.nav-links {
+        display: flex;
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    /* Animación del icono */
+    .nav-toggle:checked+.nav-burger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle:checked+.nav-burger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle:checked+.nav-burger span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+/* ---------- 2. LAYOUT COMPONENTS ------------ */
 .page-section {
     min-height: 100vh;
     display: flex;
@@ -179,11 +409,6 @@ body {
 }
 
 /* --- 4. TECH STACK --- */
-.me {
-
-}
-
-.tech-stack {}
 
 .tech-list {
     display: flex;
