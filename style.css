@@ -281,12 +281,14 @@ body {
         flex-direction: column;
         align-items: center;
         padding: 5px 0;
-        /* Padding pequeño para dar aire */
         border-radius: 15px;
         border: 1px solid var(--accent);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         overflow: hidden;
         gap: 0;
+
+        /* IMPORTANTE: Define el punto de origen de la animación */
+        transform-origin: top center;
     }
 
     /* Fuerza a que cada elemento de la lista ocupe el 100% */
@@ -329,7 +331,8 @@ body {
     /* Lógica: Si el checkbox está marcado */
     .nav-toggle:checked~.nav-links {
         display: flex;
-        animation: fadeIn 0.2s ease-out;
+        /* Aumentamos un poco la duración para que se note la transición */
+        animation: menuDrop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     /* Animación del icono */
@@ -343,6 +346,18 @@ body {
 
     .nav-toggle:checked+.nav-burger span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+@keyframes menuDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
