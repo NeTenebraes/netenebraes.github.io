@@ -41,7 +41,9 @@ class Nav {
 		this.element = document.createElement('header');
 		this.element.className = 'header';
 		this.element.innerHTML =
-			'<nav aria-label="' + navAriaLabel + '">' +
+			'<nav aria-label="' +
+			navAriaLabel +
+			'">' +
 			'<div class="nav-container">' +
 			'<ul class="nav-buttons">' +
 			items +

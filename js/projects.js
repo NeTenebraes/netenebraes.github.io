@@ -67,8 +67,12 @@ class ProjectManager {
 	}
 
 	renderEmpty() {
-		var emptyTerminal = this.i18n ? this.i18n.t('project_empty_terminal') : 'root@projects:~$ ls proyectos/';
-		var emptyMsg = this.i18n ? this.i18n.t('project_empty_msg') : 'No projects found';
+		var emptyTerminal = this.i18n
+			? this.i18n.t('project_empty_terminal')
+			: 'root@projects:~$ ls proyectos/';
+		var emptyMsg = this.i18n
+			? this.i18n.t('project_empty_msg')
+			: 'No projects found';
 		this.container.innerHTML =
 			'<div class="project-empty">' +
 			'<div class="terminal">' +
@@ -78,10 +82,14 @@ class ProjectManager {
 			'<span class="terminal__dot terminal__dot--yellow"></span>' +
 			'<span class="terminal__dot terminal__dot--green"></span>' +
 			'</div>' +
-			'<span class="terminal__title">' + emptyTerminal + '</span>' +
+			'<span class="terminal__title">' +
+			emptyTerminal +
+			'</span>' +
 			'</div>' +
 			'<div class="terminal__body">' +
-			'<div style="color: var(--color-accent);">$ echo "' + emptyMsg + '"</div>' +
+			'<div style="color: var(--color-accent);">$ echo "' +
+			emptyMsg +
+			'"</div>' +
 			'</div>' +
 			'</div>' +
 			'</div>';
@@ -143,17 +151,25 @@ class ProjectManager {
 			}
 
 			card += '<div class="project-card__actions">';
-			var githubLabel = self.i18n ? self.i18n.t('project_btn_github') : 'GitHub';
-			var demoLabel = self.i18n ? self.i18n.t('project_btn_demo') : 'Live Demo';
+			var githubLabel = self.i18n
+				? self.i18n.t('project_btn_github')
+				: 'GitHub';
+			var demoLabel = self.i18n
+				? self.i18n.t('project_btn_demo')
+				: 'Live Demo';
 			card +=
 				'<a href="' +
 				(project.githubUrl || '#') +
-				'" class="btn btn--primary btn--sm" onclick="event.stopPropagation()" target="_blank" rel="noopener noreferrer">' + githubLabel + '</a>';
+				'" class="btn btn--primary btn--sm" onclick="event.stopPropagation()" target="_blank" rel="noopener noreferrer">' +
+				githubLabel +
+				'</a>';
 			if (project.demoUrl) {
 				card +=
 					'<a href="' +
 					project.demoUrl +
-					'" class="btn btn--ghost btn--sm" onclick="event.stopPropagation()" target="_blank" rel="noopener noreferrer">' + demoLabel + '</a>';
+					'" class="btn btn--ghost btn--sm" onclick="event.stopPropagation()" target="_blank" rel="noopener noreferrer">' +
+					demoLabel +
+					'</a>';
 			}
 			card += '</div>';
 
@@ -211,9 +227,15 @@ class ProjectManager {
 				var parsed = self.parseFrontmatter(content);
 				var html = marked.parse(parsed.body);
 
-				var backText = self.i18n ? self.i18n.t('project_back') : '← Back to projects';
-				var githubLabel = self.i18n ? self.i18n.t('project_btn_github') : 'GitHub';
-				var demoLabel = self.i18n ? self.i18n.t('project_btn_demo') : 'Live Demo';
+				var backText = self.i18n
+					? self.i18n.t('project_back')
+					: '← Back to projects';
+				var githubLabel = self.i18n
+					? self.i18n.t('project_btn_github')
+					: 'GitHub';
+				var demoLabel = self.i18n
+					? self.i18n.t('project_btn_demo')
+					: 'Live Demo';
 				var title = self.getTitle(project);
 				var tags = project.tagNames || [];
 
@@ -242,12 +264,16 @@ class ProjectManager {
 					'<div class="project-detail__actions">' +
 					'<a href="' +
 					(project.githubUrl || '#') +
-					'" class="btn btn--primary" target="_blank" rel="noopener noreferrer">' + githubLabel + '</a>';
+					'" class="btn btn--primary" target="_blank" rel="noopener noreferrer">' +
+					githubLabel +
+					'</a>';
 				if (project.demoUrl) {
 					detailHtml +=
 						'<a href="' +
 						project.demoUrl +
-						'" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">' + demoLabel + '</a>';
+						'" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">' +
+						demoLabel +
+						'</a>';
 				}
 				detailHtml +=
 					'</div>' +
@@ -295,7 +321,9 @@ class ProjectManager {
 		var overlay = document.createElement('div');
 		overlay.className = 'lightbox-overlay';
 		overlay.innerHTML =
-			'<button class="lightbox-close" aria-label="' + closeLabel + '">&times;</button>' +
+			'<button class="lightbox-close" aria-label="' +
+			closeLabel +
+			'">&times;</button>' +
 			'<img class="lightbox-img" src="" alt="" />';
 		document.body.appendChild(overlay);
 

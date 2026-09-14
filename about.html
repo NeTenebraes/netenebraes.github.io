@@ -67,25 +67,37 @@
 								<span
 									class="terminal__label"
 									data-i18n="about_enfoque"
-							>ENFOQUE:</span
-							>
-							<span data-i18n="about_focus_value">Backend | SecOps | APIs REST Seguras</span><br />
+									>ENFOQUE:</span
+								>
+								<span data-i18n="about_focus_value"
+									>Backend | SecOps | APIs REST Seguras</span
+								><br />
 								<span
 									class="terminal__label"
 									data-i18n="about_status"
-							>STATUS:</span
-							>
-							<span data-i18n="about_status_value">Fullstack Developer | Content Creator | Bug
-								Bounty Hunter</span>
+									>STATUS:</span
+								>
+								<span data-i18n="about_status_value"
+									>Fullstack Developer | Content Creator | Bug
+									Bounty Hunter</span
+								>
 								<div
 									class="contribution-graph"
 									id="contributionGraph"
 								>
 									<div class="contribution-content">
-										<div
-											class="contribution-grid"
-											id="contributionGrid"
-										></div>
+										<div class="contribution-grid-wrap">
+											<span
+												class="terminal__label"
+												data-i18n="about_activity_30"
+												>ACTIVIDAD ÚLTIMOS 30
+												DÍAS:</span
+											>
+											<div
+												class="contribution-grid"
+												id="contributionGrid"
+											></div>
+										</div>
 										<div
 											class="contribution-commits"
 											id="contributionCommits"
@@ -151,11 +163,11 @@
 					</div>
 
 					<div class="about__right">
-					<h2 class="fade-up" data-i18n="about_heading">
-						PROFILE: MAURICIO &Aacute;LVAREZ
-					</h2>
+						<h2 class="fade-up" data-i18n="about_heading">
+							PROFILE: MAURICIO &Aacute;LVAREZ
+						</h2>
 
-					<p class="fade-up" data-i18n="about_p1">
+						<p class="fade-up" data-i18n="about_p1">
 							Fullstack developer with a backend focus,
 							specialized in Java &amp; Spring Boot and building
 							secure REST APIs. My cybersecurity and SecOps
@@ -267,8 +279,6 @@
 					});
 
 					var grid = document.getElementById('contributionGrid');
-					var label =
-						'<span class="terminal__label" data-i18n="about_activity_30">ACTIVIDAD ÚLTIMOS 30 DÍAS:</span>';
 					var today = new Date();
 					var todayUTC = Date.UTC(
 						today.getFullYear(),
@@ -290,11 +300,11 @@
 						var dateStr = y + '-' + m + '-' + d;
 						var count = counts[dateStr] || 0;
 
-				var square = document.createElement('div');
-					square.className = 'contribution-square';
-					square.title = dateStr + ': ' + count + ' commits';
-					var targetOpacity = '0.1';
-					var delay = (29 - i) * 0.03;
+						var square = document.createElement('div');
+						square.className = 'contribution-square';
+						square.title = dateStr + ': ' + count + ' commits';
+						var targetOpacity = '0.1';
+						var delay = (29 - i) * 0.03;
 
 						if (count > 0) {
 							var intensity = count / maxCount;
@@ -303,19 +313,21 @@
 							else targetOpacity = '0.3';
 						}
 
-					square.style.opacity = '0';
-					square.style.transition = 'opacity 0.3s ease ' + delay + 's';
-					square.dataset.targetOpacity = targetOpacity;
+						square.style.opacity = '0';
+						square.style.transition =
+							'opacity 0.3s ease ' + delay + 's';
+						square.dataset.targetOpacity = targetOpacity;
 
 						grid.appendChild(square);
 					}
 
-					grid.insertAdjacentHTML('afterbegin', label);
-
 					requestAnimationFrame(function () {
 						requestAnimationFrame(function () {
-							grid.querySelectorAll('.contribution-square').forEach(function (sq) {
-								sq.style.opacity = sq.dataset.targetOpacity || '0.1';
+							grid.querySelectorAll(
+								'.contribution-square',
+							).forEach(function (sq) {
+								sq.style.opacity =
+									sq.dataset.targetOpacity || '0.1';
 							});
 						});
 					});

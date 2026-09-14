@@ -3,8 +3,24 @@
 		"slug": "devPortes",
 		"titleKey": "project_1_title",
 		"image": "preview.png",
-		"tagIds": ["javascript", "html5", "css3", "postgresql", "java", "spring", "api-rest"],
-		"tagNames": ["JavaScript", "HTML5", "CSS3", "PostgreSQL", "Java", "Spring Boot", "API REST"],
+		"tagIds": [
+			"javascript",
+			"html5",
+			"css3",
+			"postgresql",
+			"java",
+			"spring",
+			"api-rest"
+		],
+		"tagNames": [
+			"JavaScript",
+			"HTML5",
+			"CSS3",
+			"PostgreSQL",
+			"Java",
+			"Spring Boot",
+			"API REST"
+		],
 		"githubUrl": "https://github.com/camilobermeo/devPortes",
 		"demoUrl": "https://camilobermeo.github.io/devPortes/"
 	},
@@ -44,8 +60,22 @@
 		"slug": "neCyberWiki",
 		"titleKey": "project_6_title",
 		"image": "preview.png",
-		"tagIds": ["javascript", "html5", "css3", "quartz", "astro", "cybersecurity"],
-		"tagNames": ["JavaScript", "HTML5", "CSS3", "Quartz", "Astro", "Cybersecurity"],
+		"tagIds": [
+			"javascript",
+			"html5",
+			"css3",
+			"quartz",
+			"astro",
+			"cybersecurity"
+		],
+		"tagNames": [
+			"JavaScript",
+			"HTML5",
+			"CSS3",
+			"Quartz",
+			"Astro",
+			"Cybersecurity"
+		],
 		"githubUrl": "https://github.com/NeTenebraes/neCyberWiki",
 		"demoUrl": "https://netenebraes.github.io/neCyberWiki/"
 	}

@@ -8,7 +8,7 @@ class I18n {
 			hero_badge: 'Freelance',
 			hero_subtitle: 'Fullstack Developer | SecOps',
 			hero_description:
-				'Backend developer with a hacker\'s mindset. I build secure APIs and automate Linux systems, then turn what I learn into content for 64k+ developers across YouTube and TikTok.',
+				"Backend developer with a hacker's mindset. I build secure APIs and automate Linux systems, then turn what I learn into content for 64k+ developers across YouTube and TikTok.",
 			hero_email: 'Email',
 			hero_cv: 'CV',
 			hero_stat_opensource: 'Open Source',
@@ -17,7 +17,7 @@ class I18n {
 			page_title_about: 'About | NeTenebrae',
 			page_title_projects: 'Projects | NeTenebrae',
 			meta_desc_home:
-				'Backend developer with a hacker\'s mindset. Building secure APIs, automating Linux systems, and creating content for 64k+ developers.',
+				"Backend developer with a hacker's mindset. Building secure APIs, automating Linux systems, and creating content for 64k+ developers.",
 			meta_desc_about:
 				'About Mauricio Alvarez - Fullstack Developer focused on Backend & SecOps, Content Creator, and Ethical Hacker.',
 			meta_desc_projects:
@@ -159,7 +159,11 @@ class I18n {
 		var page = document.body.dataset.page || '';
 		if (titles[page]) document.title = t[titles[page]] || document.title;
 		var metaDesc = document.querySelector('meta[name="description"]');
-		if (metas[page] && metaDesc) metaDesc.setAttribute('content', t[metas[page]] || metaDesc.getAttribute('content'));
+		if (metas[page] && metaDesc)
+			metaDesc.setAttribute(
+				'content',
+				t[metas[page]] || metaDesc.getAttribute('content'),
+			);
 	}
 
 	updateToggle() {
