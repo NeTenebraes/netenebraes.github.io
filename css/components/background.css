@@ -1,0 +1,93 @@
+/* =============================================
+   Component — Decoración de fondo
+   Contenida con overflow clip para no crear
+   scroll horizontal (antes right:-8% desbordaba).
+   ============================================= */
+.bg-decoration {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	overflow: clip;
+}
+
+/* Large rotated rectangle - spans across viewport */
+.bg-shape--rect {
+	position: absolute;
+	width: 300vw;
+	height: 120px;
+	background: var(--bg-shape-rect);
+	opacity: var(--bg-shape-opacity);
+	top: 35%;
+	left: -50vw;
+	transform: rotate(-12deg);
+	transform-origin: center;
+	pointer-events: none;
+	z-index: 0;
+}
+
+/* Large rotated diamond/square */
+.bg-shape--diamond {
+	position: absolute;
+	width: 120vw;
+	height: 120vw;
+	max-width: 900px;
+	max-height: 900px;
+	background: var(--bg-shape-diamond);
+	border: 1px solid var(--color-border);
+	opacity: 0.12;
+	top: -25%;
+	right: -35%;
+	transform: rotate(35deg);
+	transform-origin: center;
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* Decorative line above footer (left side) */
+.bg-line-footer {
+	position: fixed;
+	bottom: 56px;
+	left: 0;
+	width: 35%;
+	height: 1px;
+	background: var(--color-accent);
+	opacity: 0.12;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.bg-shape {
+	position: absolute;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.bg-shape--ring {
+	top: 10%;
+	right: 0;
+	width: 300px;
+	height: 300px;
+	border: 2px solid var(--color-accent);
+	border-radius: 50%;
+	opacity: 0.12;
+}
+
+.bg-shape--line-h {
+	bottom: 20%;
+	left: 0;
+	width: 40%;
+	height: 1px;
+	background: var(--color-accent);
+	opacity: 0.12;
+}
+
+.bg-shape--diagonal {
+	top: -5%;
+	right: 5%;
+	width: 200px;
+	height: 200px;
+	border: 2px solid var(--color-accent);
+	opacity: 0.12;
+	transform: rotate(45deg);
+}

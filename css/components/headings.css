@@ -1,0 +1,25 @@
+/* =============================================
+   Component — Section headings
+   ============================================= */
+.section-heading {
+	font-family: var(--font-mono);
+	font-size: clamp(1rem, 2vw, 1.4rem);
+	color: var(--color-accent);
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	margin-bottom: var(--space-2xl);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 8px;
+	flex-shrink: 0;
+	width: 100%;
+}
+
+.section-heading::after {
+	content: '';
+	width: 40px;
+	height: 1px;
+	background: var(--color-accent);
+}

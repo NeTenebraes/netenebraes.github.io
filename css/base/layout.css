@@ -1,0 +1,33 @@
+/* =============================================
+   Base — Layout general
+   main / section dejan aire para el footer fijo.
+   ============================================= */
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+	min-width: 100vw;
+	justify-content: center;
+	align-items: center;
+}
+
+section {
+	flex: 1;
+	display: flex;
+	min-height: 0;
+	width: 100%;
+	max-width: var(--container-max);
+	margin: 0 auto;
+	position: relative;
+	overflow-x: clip;
+	overflow-y: visible;
+	padding: 0 clamp(16px, 4vw, 40px);
+	box-sizing: border-box;
+}
+
+/* Contenedor de proyectos (inyectado por JS) */
+#projectsContent {
+	width: 100%;
+	min-width: 0;
+}

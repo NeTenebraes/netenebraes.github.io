@@ -1,99 +1,193 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeCyber | Security Researcher Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>NeTenebrae | Fullstack Developer & SecOps</title>
+		<meta
+			name="description"
+			content="Backend developer with a hacker's mindset. Building secure APIs, automating Linux systems, and creating content for 64k+ developers."
+		/>
+		<meta name="theme-color" content="#0F1115" />
+		<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<div class="bg-decoration" aria-hidden="true">
+			<div class="bg-line-footer"></div>
+			<div class="bg-shape bg-shape--rect" aria-hidden="true"></div>
+			<div class="bg-shape bg-shape--diamond" aria-hidden="true"></div>
+		</div>
 
-    <section class="page-section" id="about">
-        <div class="bento-grid">
-            
-            <article class="item profile">
-                <img src="https://avatars.githubusercontent.com/u/156097208?v=4" alt="NeTenebrae Avatar" class="avatar">
-                <h1>🛡️ NeTenebrae</h1>
-                <p class="tagline">Cybersecurity Enthusiast</p>
-                <p>Especializado en <strong>Pentesting</strong> y <strong>Hardening</strong>. Usuario de Arch Linux por convicción y pasión por el scripting.</p>
-            </article>
+		<main>
+			<section id="home" class="hero">
+				<div class="hero-content">
+					<span class="hero-badge">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path d="M12 15a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+							<path
+								d="M12 2a2 2 0 0 0-2 2c0 .74.4 1.39 1 1.73V7h4a2 2 0 0 1 2 2v3a1 1 0 1 0 2 0v-1a2 2 0 0 1 2-2h.26a1 1 0 0 0 .95-.68l.73-2.27A2 2 0 0 0 18.73 3H17a1 1 0 0 0-.95.68l-.49 1.46"
+							/>
+							<path d="M5 15a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+							<path d="M7 7H3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4" />
+						</svg>
+						<span data-i18n="hero_badge">Freelance</span>
+					</span>
 
-            <aside class="item tech">
-                <h3>🛠️ Stack Tecnológico</h3>
-                <div class="tech-list">
-                    <span class="tech-tag">Arch Linux</span>
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Bash</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">Burp Suite</span>
-                    <span class="tech-tag">Nmap</span>
-                </div>
-            </aside>
+					<div class="hero-stats">
+						<a
+							href="https://youtube.com/@NeTenebrae"
+							class="hero-stat"
+							target="_blank"
+							rel="noopener"
+						>
+							<span
+								class="hero-stat__icon"
+								id="statYoutube"
+							></span>
+							<span class="hero-stat__label">YouTube</span>
+							<span class="hero-stat__value">17k+</span>
+						</a>
+						<a
+							href="https://tiktok.com/@netenebrae"
+							class="hero-stat"
+							target="_blank"
+							rel="noopener"
+						>
+							<span
+								class="hero-stat__icon"
+								id="statTiktok"
+							></span>
+							<span class="hero-stat__label">TikTok</span>
+							<span class="hero-stat__value">47k+</span>
+						</a>
+						<a
+							href="https://github.com/NeTenebraes"
+							class="hero-stat"
+							target="_blank"
+							rel="noopener"
+						>
+							<span
+								class="hero-stat__icon"
+								id="statGithub"
+							></span>
+							<span class="hero-stat__label">Open Source</span>
+							<span class="hero-stat__value">PRs</span>
+						</a>
+					</div>
 
-        </div>
-        <div class="scroll-indicator">DESCEND_TO_PROJECTS ↓</div>
-    </section>
+					<h1>NeTenebrae</h1>
 
-    <section class="page-section" id="projects">
-        <header class="section-header">
-            <h2 class="section-title">Expedientes y Herramientas</h2>
-        </header>
-        
-        <div class="projects-slider">
+					<h2 data-i18n="hero_subtitle">
+						Fullstack Developer | SecOps
+					</h2>
 
-            <article class="item project wiki">
-                <div class="project-content">
-                    <span class="badge">Knowledge</span>
-                    <h3>neCyberWIKI</h3>
-                    <p>Documentación de ciberseguridad abierta. Repositorio de vulnerabilidades y notas tácticas.</p>
-                </div>
-                <a href="#" class="btn-link">Explorar Wiki →</a>
-            </article>
+			<p class="hero-description" data-i18n="hero_description">
+					Backend developer with a hacker's mindset. I build
+					secure APIs and automate Linux systems, then turn
+					what I learn into content for 64k+ developers across
+					YouTube and TikTok.
+				</p>
 
-            <article class="item project nebspwm">
-                <div class="project-content">
-                    <span class="badge">Desktop Env</span>
-                    <h3>neBSPWM</h3>
-                    <p>Configuración avanzada de BSPWM optimizada para flujos de trabajo de seguridad.</p>
-                </div>
-                <div class="project-image-container">
-                    <img src="https://raw.githubusercontent.com/NeTenebraes/neBSPWM-dotfiles/main/screeshots/Animated.webp" alt="neBSPWM Preview" class="project-img">
-                </div>
-            </article>
+					<div class="hero-actions">
+						<button
+							class="btn btn--primary"
+							id="emailBtn"
+							type="button"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<rect
+									width="20"
+									height="16"
+									x="2"
+									y="4"
+									rx="2"
+								/>
+								<path
+									d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+								/>
+							</svg>
+							<span data-i18n="hero_email">Email</span>
+						</button>
+						<a href="#" class="btn btn--white" download>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path
+									d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+								/>
+								<polyline points="7 10 12 15 17 10" />
+								<line x1="12" x2="12" y1="15" y2="3" />
+							</svg>
+							<span data-i18n="hero_cv">CV</span>
+						</a>
+					</div>
+				</div>
 
-            <article class="item project future">
-                <div class="project-content">
-                    <span class="badge">Incoming</span>
-                    <h3>Log-Analyzer</h3>
-                    <p>Analizador de logs automatizado en Python para detección de intrusos.</p>
-                </div>
-            </article>
+				<div class="hero-image">
+					<img
+						src="assets/images/avatar-banner.webp"
+						alt="NeTenebrae - Backend Developer & SecOps"
+					/>
+				</div>
+			</section>
+		</main>
 
-        </div>
+		<script src="js/icons.js"></script>
+		<script src="js/badges.js"></script>
+		<script src="js/components.js"></script>
+		<script src="js/i18n.js"></script>
+		<script src="js/app.js"></script>
+		<script>
+			IconService.init().then(function () {
+				new Nav('index').render();
+				new Footer().render();
+				var i18n = new I18n();
+				i18n.init();
 
-        <div class="slider-hint"></div>
-    </section>
+				var stats = [
+					{ id: 'statYoutube', icon: 'youtube' },
+					{ id: 'statGithub', icon: 'github' },
+					{ id: 'statLinux', icon: 'linux' },
+				];
+				stats.forEach(function (s) {
+					var el = document.getElementById(s.id);
+					if (el) el.innerHTML = IconService.get(s.icon);
+				});
 
-    <section class="page-section" id="contact">
-        <div class="bento-grid contact-grid">
-            
-            <div class="item contact-info">
-                <h2>¿Iniciamos una operación?</h2>
-                <p>Abierto a colaboraciones en investigación de seguridad y desarrollo de herramientas Open Source.</p>
-                <nav class="social-pills">
-                    <a href="https://github.com/NeTenebraes" class="pill" target="_blank">GitHub</a>
-                    <a href="https://www.youtube.com/@NeTenebrae" class="pill" target="_blank">Youtube</a>
-                </nav>
-            </div>
-
-            <div class="item mail-box">
-                <h3>CONTACT_ME</h3>
-                <p class="email-text">contact.netenebrae@gmail.com</p>
-                </div>
-
-        </div>
-    </section>
-
-    <script src="script.js"></script>
-</body>
+				var tiktokSvg =
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.28 6.28 0 00-6.28 6.28 6.28 6.28 0 006.28 6.28 6.28 6.28 0 006.28-6.28V8.75a8.18 8.18 0 004.77 1.52V6.82a4.84 4.84 0 01-1.03-.13z"/></svg>';
+				var tiktokEl = document.getElementById('statTiktok');
+				if (tiktokEl) tiktokEl.innerHTML = tiktokSvg;
+			});
+		</script>
+	</body>
 </html>

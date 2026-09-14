@@ -1,0 +1,116 @@
+/* =============================================
+   Component — About
+   2-column grid: terminal+tech (left) | text+video (right)
+   ============================================= */
+.about {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(20px, 3vw, 50px);
+	align-items: stretch;
+}
+
+/* ── Grid layout ── */
+.about__grid {
+	display: grid;
+	grid-template-columns: 1fr 1.2fr;
+	gap: clamp(32px, 4vw, 60px);
+	align-items: start;
+	width: 100%;
+}
+
+/* ── Left column: terminal + tech ── */
+.about__left {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(24px, 3vw, 40px);
+	min-width: 0;
+}
+
+/* ── Terminal card ── */
+.about__terminal {
+	width: 100%;
+}
+
+/* ── Right column: text + video ── */
+.about__right {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(12px, 2vh, 20px);
+	min-height: 0;
+	min-width: 0;
+}
+
+.about__right h2 {
+	color: var(--color-text);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.about__right p {
+	overflow-wrap: break-word;
+	color: var(--color-text-muted);
+	line-height: 1.7;
+}
+
+/* ── Video embed ── */
+.about__video {
+	width: 100%;
+	margin-top: clamp(8px, 1.5vh, 16px);
+}
+
+.about__video-wrapper {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border-radius: var(--radius-card);
+	overflow: hidden;
+	border: 1px solid var(--color-border);
+	background: var(--color-bg-alt);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.about__video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* ── Mobile responsive ── */
+@media (max-width: 768px) {
+	.about__grid {
+		grid-template-columns: 1fr;
+		gap: 32px;
+	}
+
+	.about__right h2 {
+		font-size: 1rem;
+	}
+
+	.about__right p {
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+
+	.about__video {
+		margin-top: 12px;
+	}
+
+	.about__video-wrapper {
+		aspect-ratio: 16 / 9;
+		border-radius: 12px;
+	}
+}
+
+@media (max-width: 480px) {
+	.about__right h2 {
+		font-size: 0.9rem;
+		letter-spacing: 0.5px;
+	}
+
+	.about__right p {
+		font-size: 0.85rem;
+	}
+}

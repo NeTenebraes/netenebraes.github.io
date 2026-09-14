@@ -1,0 +1,42 @@
+/* =============================================
+   Base — Tipografía
+   ============================================= */
+h1 {
+	font-family: var(--font-mono);
+	font-weight: 700;
+	font-size: clamp(2.4rem, 11vw, 7rem);
+	line-height: 1;
+	letter-spacing: -2px;
+	color: var(--color-text);
+	overflow-wrap: break-word;
+}
+
+h2 {
+	font-family: var(--font-mono);
+	font-weight: 700;
+	font-size: clamp(1.4rem, 3vw, 2rem);
+	line-height: 1.2;
+	color: var(--color-text);
+}
+
+h3 {
+	font-family: var(--font-mono);
+	font-weight: 500;
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	color: var(--color-text);
+}
+
+h4 {
+	font-family: var(--font-mono);
+	font-weight: 700;
+	font-size: 0.9rem;
+	color: var(--color-accent);
+}
+
+p {
+	font-family: var(--font-body);
+	font-weight: 400;
+	font-size: clamp(0.85rem, 1.1vw, 1rem);
+	line-height: 1.65;
+	color: var(--color-text-muted);
+}

@@ -1,0 +1,39 @@
+/* =============================================
+   Component — Language toggle
+   En desktop flota; en móvil se vuelve estático
+   (ver base/responsive.css) para no solapar el nav.
+   ============================================= */
+.lang-toggle {
+	position: absolute;
+	top: 14px;
+	right: 40px;
+	display: flex;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-pill);
+	overflow: hidden;
+	z-index: 101;
+	flex-shrink: 0;
+	background: var(--color-bg);
+}
+
+.lang-toggle__btn {
+	padding: 5px 14px;
+	min-height: 32px;
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	font-weight: 500;
+	color: var(--color-text-muted);
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.lang-toggle__btn:hover {
+	color: var(--color-text);
+}
+
+.lang-toggle__btn--active {
+	background: var(--color-accent);
+	color: #0f1115;
+}

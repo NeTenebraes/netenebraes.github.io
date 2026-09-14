@@ -1,0 +1,75 @@
+/* =============================================
+   Component — Navbar
+   ============================================= */
+.header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	padding: 14px 40px;
+	z-index: 110;
+	background: rgba(15, 17, 21, 0.85);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+}
+
+.nav-container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: var(--container-max);
+	position: relative;
+}
+
+.nav-buttons {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+}
+
+.nav-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	height: var(--nav-btn-size);
+	width: 135px;
+	padding: 12px 18px;
+	border-radius: 9999px;
+	border: 1.5px solid var(--color-border);
+	font-family: var(--font-mono);
+	font-weight: 500;
+	font-size: 0.9rem;
+	color: var(--color-text-muted);
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.nav-btn:hover {
+	border-color: var(--color-text);
+	color: var(--color-text);
+	background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-btn--active {
+	background: var(--color-accent);
+	color: #0f1115;
+	border-color: var(--color-accent);
+}
+
+.nav-btn--active:hover {
+	background: var(--color-accent);
+	color: #0f1115;
+	border-color: var(--color-accent);
+}
+
+.nav-btn svg,
+.nav-btn img {
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+}

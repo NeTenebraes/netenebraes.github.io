@@ -1,0 +1,323 @@
+/* =============================================
+   Base — Responsive (mismos breakpoints 1024/768/480
+   + punto intermedio 900px para cards)
+   Correcciones: nav sin solapes, hero sin overflow,
+   footer con safe-area, grids que no desbordan.
+   ============================================= */
+
+/* ---- Tablet (<=1024px) ---- */
+@media (max-width: 1024px) {
+	.hero {
+		gap: clamp(32px, 5vw, 48px);
+		padding: clamp(80px, 12vh, 120px) clamp(20px, 3vw, 48px)
+			clamp(32px, 6vh, 60px);
+		margin: 16px;
+		min-height: calc(100vh - 32px);
+	}
+
+	.hero-image {
+		width: clamp(380px, 38vw, 480px);
+		height: calc(100% + clamp(120px, 15vh, 180px));
+		margin-top: clamp(-60px, -7.5vh, -90px);
+		margin-bottom: clamp(-60px, -7.5vh, -90px);
+	}
+
+	.about__grid {
+		grid-template-columns: 1fr;
+		gap: 32px;
+	}
+}
+
+/* ---- Tablet extra: formas de fondo (<=1024px) ---- */
+@media (max-width: 1024px) {
+	.bg-shape--rect {
+		height: 100px;
+		top: 35%;
+		opacity: 0.05;
+	}
+
+	.bg-shape--diamond {
+		max-width: 750px;
+		max-height: 750px;
+		top: -20%;
+		right: -30%;
+		opacity: 0.1;
+	}
+}
+
+/* ---- Intermedio: cards 2col -> 1col antes (<=900px) ---- */
+@media (max-width: 900px) {
+	.project-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ---- Mobile landscape (<=768px) ---- */
+@media (max-width: 768px) {
+	section {
+		padding-top: clamp(110px, 14vh, 130px);
+	}
+
+	/* Header: el toggle deja de flotar para no tapar el nav */
+	.header {
+		flex-wrap: wrap;
+		gap: 10px;
+		padding: 12px 16px;
+	}
+
+	.nav-container {
+		flex-wrap: wrap;
+		justify-content: center;
+		padding-top: 34px;
+	}
+
+	.nav-buttons {
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.lang-toggle {
+		position: absolute;
+		top: 0;
+		right: 50%;
+		transform: translateX(50%);
+	}
+
+	/* Hero apilado y centrado */
+	.hero {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 32px;
+		padding: clamp(80px, 12vh, 100px) clamp(16px, 4vw, 24px) 40px;
+		min-height: auto;
+		justify-content: flex-start;
+		margin: 12px;
+		border-radius: 18px;
+	}
+
+	.hero::before {
+		width: 100%;
+		clip-path: polygon(0 75%, 100% 45%, 100% 0%, 0 0%);
+	}
+
+	.hero-content {
+		align-items: center;
+		width: 100%;
+	}
+
+	.hero-badge {
+		align-self: center;
+	}
+
+	.hero-description {
+		max-width: 100%;
+	}
+
+	.hero-actions {
+		justify-content: center;
+		width: 100%;
+	}
+
+	.hero-actions .btn {
+		flex: 1 1 auto;
+		min-width: 140px;
+	}
+
+	.hero-social {
+		align-items: center;
+	}
+
+	.hero-social-divider {
+		align-self: center;
+	}
+
+	.hero-image {
+		width: clamp(320px, 65vw, 380px);
+		height: auto;
+		max-height: calc(100svh - 180px);
+		margin-top: 0;
+		margin-bottom: 0;
+		justify-content: center;
+	}
+
+	.hero-image img {
+		object-fit: cover;
+		object-position: top center;
+	}
+
+	.project-card__image {
+		height: 160px;
+	}
+
+	/* Footer: crece hacia arriba, no tapa contenido */
+	.footer {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 10px;
+		height: auto;
+		min-height: var(--footer-height-mobile);
+		padding: 10px 20px calc(10px + env(safe-area-inset-bottom, 0px));
+		justify-content: space-between;
+	}
+}
+
+/* ---- Mobile portrait (<=480px) ---- */
+@media (max-width: 480px) {
+	h1 {
+		letter-spacing: -1px;
+	}
+
+	.header {
+		padding: 10px 12px;
+	}
+
+	.nav-buttons {
+		gap: 8px;
+	}
+
+	.nav-btn {
+		flex: 1 1 calc(50% - 8px);
+		width: auto;
+		min-width: 0;
+		height: 44px;
+		padding: 10px 12px;
+		font-size: 0.78rem;
+		gap: 5px;
+	}
+
+	.nav-btn svg {
+		width: 13px;
+		height: 13px;
+	}
+
+	.hero-actions {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.hero-actions .btn {
+		width: 100%;
+	}
+
+	.mono-chart__label {
+		min-width: 100px;
+		font-size: 0.62rem;
+	}
+
+	.mono-chart__track {
+		height: 10px;
+		border-radius: 5px;
+	}
+
+	.mono-chart__fill {
+		border-radius: 5px;
+	}
+
+	/* Pills: se mantienen en row pero más compactas */
+	.badge {
+		font-size: 0.62rem;
+		padding: 5px 12px;
+	}
+
+	.hero-stats {
+		justify-content: center;
+	}
+
+	.tech-grid {
+		gap: 8px;
+	}
+
+	.tech-card {
+		padding: 7px 14px;
+	}
+
+	.hero::before {
+		width: 100%;
+		opacity: 0.1;
+		clip-path: polygon(0 75%, 100% 45%, 100% 0%, 0 0%);
+	}
+
+	.bg-line-footer {
+		width: 25%;
+	}
+
+	.bg-shape--ring {
+		width: 200px;
+		height: 200px;
+		opacity: 0.08;
+	}
+
+	.bg-shape--diagonal {
+		width: 140px;
+		height: 140px;
+		opacity: 0.08;
+	}
+
+	.bg-shape--dot {
+		width: 8px;
+		height: 8px;
+		opacity: 0.08;
+	}
+
+	.footer {
+		justify-content: center;
+		text-align: center;
+	}
+
+	.bg-shape--rect {
+		height: 80px;
+		top: 40%;
+		opacity: 0.04;
+	}
+
+	.bg-shape--diamond {
+		max-width: 600px;
+		max-height: 600px;
+		top: -30%;
+		right: -40%;
+		opacity: 0.08;
+	}
+
+	/* About */
+	.about__right {
+		gap: 10px;
+	}
+
+	.about__right p {
+		font-size: 0.85rem;
+		line-height: 1.5;
+	}
+
+	.about__video-wrapper {
+		border-radius: 10px;
+	}
+
+	/* Projects */
+	.project-card__body {
+		padding: 12px;
+	}
+
+	.project-card__title {
+		font-size: 0.85rem;
+	}
+
+	.project-card__tag {
+		font-size: 0.58rem;
+		padding: 2px 8px;
+	}
+
+	.project-detail__title {
+		font-size: 1.1rem;
+	}
+
+	.markdown-body {
+		font-size: 0.85rem;
+	}
+
+	.markdown-body pre {
+		padding: 10px;
+		font-size: 0.7rem;
+	}
+}
