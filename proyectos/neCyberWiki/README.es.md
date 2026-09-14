@@ -5,45 +5,46 @@ tags: [cybersecurity, git, obsidian, quartz]
 
 # neCyberWiki
 
-> Wiki colaborativo de ciberseguridad con más de 1800 commits, cubriendo pentesting, hacking ético y fundamentos de ciencias de la computación.
+> Wiki colaborativo de ciberseguridad con más de 1800 commits, cubriendo prácticas de terminal, resolución de máquinas vulnerables y fundamentos de hacking ético.
 
-![Banner](https://camo.githubusercontent.com/f5905236626b28e91e75ee3bbec13bd70ffdd91c3ef8d4542bbda49960eb0e36/68747470733a2f2f6e6574656e6562726165732e6769746875622e696f2f6e65437962657257696b692f5f6173736574732f42616e6e65722e77656270)
+![Banner](https://netenebraes.github.io/neCyberWiki/_assets/Banner.webp)
 
 ## Resumen
 
 neCyberWiki es un recurso educativo gratuito y open-source que centraliza conocimiento práctico de ciberseguridad en una ubicación accesible. Construido con **Obsidian** para la creación de contenido y publicado vía **Quartz** como sitio estático, conecta la toma de notas personal con el conocimiento público.
 
-La wiki cubre metodologías de pentesting, referencias de herramientas de seguridad, cheatsheets y conceptos fundamentales de ciencias de la computación — todo organizado para consulta rápida durante auditorías de seguridad.
+La wiki está diseñada como una bitácora de aprendizaje donde se documentan prácticas de terminal, técnicas de auditoría de seguridad, WriteUps de retos CTF y conceptos fundamentales de ciencias de la computación — todo organizado para consulta rápida.
 
 ## Qué Contiene
 
-- **Guías de Pentesting** — Metodologías paso a paso para vectores de ataque comunes
-- **Cheatsheets** — Tarjetas de referencia rápida para herramientas como Nmap, Burp Suite y Metasploit
-- **Referencias de Herramientas** — Guías de uso detalladas para herramientas de auditoría de seguridad
-- **Fundamentos de CS** — Networking, criptografía y conceptos de sistemas operativos
-- **Configuraciones Custom** — Templates de Obsidian y plugins de Quartz para gestión de conocimiento
-
-![Vista Previa del Contenido](info.png)
-*Estructura y organización del contenido del wiki.*
+- **Prácticas de Terminal Linux** — WriteUps de OverTheWire Bandit cubriendo comandos fundamentales: SSH, permisos, `find`, `grep`, `base64`, `openssl`, networking y más, con explicaciones paso a paso orientadas a principiantes
+- **Resolución de Máquinas Vulnerables** — WriteUps detallados de VulnHub (IMF, DarkHole 2) con técnicas de SQL Injection, Buffer Overflow, Port Knocking, Reverse Shell y escalada de privilegios
+- **Ética y Legalidad** — Páginas dedicadas a la ética en ciberseguridad y código de conducta
+- **Recursos Compartidos** — Assets, imágenes y material de apoyo para el aprendizaje
 
 ## Stack Tecnológico
 
 | Capa | Tecnología |
 |------|-----------|
-| Contenido | Obsidian (Markdown) |
-| Publicación | Quartz (generador de sites estáticos) |
-| Control de versiones | Git |
+| Contenido | Obsidian (Markdown con frontmatter) |
+| Publicación | Quartz v4.5.2 (generador de sites estáticos) |
+| Runtime | Node.js >= 22 |
+| Componentes | Preact (JSX) |
+| Estilos | SCSS (LightningCSS) |
+| Analytics | Plausible |
+| Comentarios | Giscus |
 | Hosting | GitHub Pages |
+| Deploy | GitHub Actions |
 
 ## Impacto
 
-> 9 estrellas en GitHub, licenciado bajo MIT, con más de 1800 commits de conocimiento de seguridad curado.
+> Más de 1800 commits de conocimiento de seguridad curado, licenciado bajo MIT.
 
 El proyecto está publicado en [netenebraes.github.io/neCyberWiki](https://netenebraes.github.io/neCyberWiki/) y recibe contribuciones de la comunidad.
 
 ## Lo Que Aprendí
 
-- **Arquitectura de contenido** — Organizar más de 1800 notas en una estructura de conocimiento navegable y mantenible
+- **Arquitectura de contenido** — Organizar cientos de notas en una estructura de conocimiento navegable y mantenible
 - **Generación de sites estáticos** — Configurar Quartz para renderizar Markdown con formato de Obsidian correctamente
 - **Disciplina de documentación** — Mantener calidad y consistencia del contenido en un repositorio grande y en evolución
 - **Flujo de trabajo open source** — Gestionar issues, pull requests y contribuciones de la comunidad

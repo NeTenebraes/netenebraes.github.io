@@ -5,46 +5,61 @@ tags: [linux, bash, arch-linux, intel, gpu]
 
 # Intel Legacy Buffer Fix
 
-> Script de automatización que elimina el tearing de pantalla y artefactos visuales en GPUs Intel antiguas bajo X11.
+> Script de automatización que corrige la corrupción del búfer de video en GPUs Intel antiguas bajo X11 en Arch Linux.
+
+![Preview](preview.png)
 
 ## El Problema
 
-Ejecutar Arch Linux en hardware Intel antiguo (Gen6 / Sandy Bridge) con gestores de ventanas ligeros como BSPWM produce artefactos visuales persistentes — líneas verticales, corrupción de pantalla y tearing severo. La causa raíz: Mesa moderno eliminó el soporte adecuado para estos GPUs, rompiendo el pipeline de renderizado.
+Ejecutar Arch Linux en hardware Intel antiguo (Gen6 / Sandy Bridge) con gestores de ventanas ligeros produce artefactos visuales persistentes — líneas verticales, corrupción de pantalla y rendering roto. La causa raíz: las versiones modernas de Mesa sustituyeron los controladores clásicos por el driver Crocus, introduciendo regresiones en la asignación de memoria intermedia (*ring buffer*) de los chipsets Sandy Bridge.
+
+## Cómo Funciona
+
+El script realiza tres operaciones críticas para estabilizar el entorno gráfico:
+
+1. **Reemplaza Mesa moderno por mesa-amber** — La rama legacy que conserva intacto el código de hardware heredado (`i965`). Se utiliza `pacman -Rdd` para remover la pila de Mesa estándar sin romper dependencias críticas, instalando inmediatamente `mesa-amber` y `lib32-mesa-amber`.
+
+2. **Configura Xorg con modesetting** — Genera `/etc/X11/xorg.conf.d/20-intel.conf` con el driver `modesetting` nativo de Xorg (no requiere `xf86-video-intel`), habilitando `DRI 3` para comunicación eficiente con la GPU y `TearFree` para eliminar el desgarro de pantalla mediante doble búfer por hardware.
+
+3. **Mitigación opcional para SDDM** — Con la bandera `--sddm`, genera `/etc/sddm.conf.d/10-mesa-legacy.conf` que fuerza renderizado por software (`QT_QUICK_BACKEND=software`, `LIBGL_ALWAYS_SOFTWARE=1`) solo en la pantalla de login para evitar congelamientos. La aceleración por hardware se restaura al iniciar sesión.
+
+> [!NOTE]
+> El script genera respaldos automáticos (`.bak` con marca de tiempo) de los archivos de configuración que modifica.
+
+## Uso
+
+### Sin SDDM
+```bash
+curl -sL https://raw.githubusercontent.com/NeTenebraes/Intel-Legacy-Buffer-Fix-Arch-Linux/main/intel-legacy-fix.sh | sudo bash
+```
+
+### Con SDDM Fix
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/NeTenebraes/Intel-Legacy-Buffer-Fix-Arch-Linux/main/intel-legacy-fix.sh) --sddm
+```
 
 ## Antes y Después
 
 ![Antes](https://raw.githubusercontent.com/NeTenebraes/Intel-Legacy-Buffer-Fix-Arch-Linux/refs/heads/main/images/Antes.webp)
-*Antes: tearing de pantalla, líneas verticales y corrupción visual en Intel HD 2000.*
+*Antes: corrupción de búfer de video, líneas verticales y artefactos visuales en Intel HD 2000.*
 
 ![Después](https://raw.githubusercontent.com/NeTenebraes/Intel-Legacy-Buffer-Fix-Arch-Linux/main/images/Despues.webp)
 *Después: renderizado estable sin tearing, colores correctos y compositing suave.*
-
-## Cómo Funciona
-
-El script realiza tres operaciones críticas:
-
-1. **Reemplaza Mesa moderno por mesa-amber** — La rama legacy que soporta correctamente el hardware Intel Gen6
-2. **Habilita aceleración SNA** — Reemplaza el backend UXA roto con el renderizador SNA más rápido y compatible
-3. **Crea overrides de variables de entorno** — Asegura que Mesa Amber se mantenga activo en aplicaciones Qt y Electron que podrían cargar la biblioteca incorrecta
-
-## Desafíos Técnicos Clave
-
-- **Conflictos de dependencias de pacman** — Remover Mesa moderno requiere `-Rdd` para saltar verificaciones de dependencias sin romper el sistema
-- **Congelamientos en login de SDDM** — El display manager intenta usar aceleración por hardware en el greeter, causando congelamientos. Se resuelve forzando renderizado por software específicamente en SDDM
-- **Conflictos de bibliotecas Qt/Electron** — Algunas aplicaciones ignoran el Mesa del sistema y cargan sus propias bibliotecas. Los overrides de variables de entorno fuerzan que usen la versión correcta
 
 ## Stack Tecnológico
 
 | Capa | Tecnología |
 |------|-----------|
 | SO | Arch Linux |
-| Scripting | Bash |
-| GPU | Intel HD 2000 (Sandy Bridge) |
-| Display | X11 + BSPWM |
+| Scripting | Bash (148 líneas) |
+| GPU | Intel HD 2000 (Sandy Bridge / Gen6) |
+| Display | X11 + modesetting |
+| Gráficos | Mesa Amber (i965 driver) |
+| Licencia | GPLv3 |
 
 ## Lo Que Aprendí
 
-- **Internals de drivers de GPU** — Entender cómo interactúan Mesa, los backends SNA/UXA y Xorg a nivel de hardware
-- **Gestión de rolling releases** — Manejar conflictos de dependencias en una distro donde los paquetes se actualizan constantemente
+- **Internals de drivers de GPU** — Entender cómo interactúan Mesa, los backends de renderizado y Xorg a nivel de hardware
+- **Gestión de rolling releases** — Manejar conflictos de dependencias en Arch Linux con `pacman -Rdd`
 - **Debugging de display servers** — Diagnosticar problemas de renderizado a través de logs de Xorg e inspección de entorno
-- **Scripting defensivo** — Crear mecanismos de backup automático y rollback para cambios a nivel del sistema
+- **Scripting defensivo** — Crear mecanismos de backup automático y manejo de errores para cambios a nivel del sistema
