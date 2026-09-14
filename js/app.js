@@ -55,7 +55,7 @@ if (emailBtn) {
 	emailBtn.addEventListener('click', function () {
 		var email = 'contact' + '@' + 'netenebrae.dev';
 		var lang = document.documentElement.lang || 'en';
-		var msg = lang === 'es' ? 'Copiado' : 'Copied';
+		var msg = (I18n.TRANSLATIONS[lang] && I18n.TRANSLATIONS[lang].email_copied) || 'Copied';
 
 		var oldTooltip = emailBtn.querySelector('.email-tooltip');
 		if (oldTooltip) oldTooltip.remove();

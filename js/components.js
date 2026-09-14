@@ -12,9 +12,12 @@ class Nav {
 
 	render() {
 		var self = this;
+		var lang = document.documentElement.lang || 'en';
+		var t = I18n.TRANSLATIONS[lang] || {};
 		var items = Nav.ITEMS.map(function (item) {
 			var isActive = item.file === self.activePage;
 			var icon = IconService.get(item.iconId);
+			var label = t[item.labelKey] || item.labelKey;
 			return (
 				'<li>' +
 				'<a href="' +
@@ -28,16 +31,17 @@ class Nav {
 				'<span data-i18n="' +
 				item.labelKey +
 				'">' +
-				item.labelKey +
+				label +
 				'</span>' +
 				'</a></li>'
 			);
 		}).join('');
 
+		var navAriaLabel = t.nav_aria_label || 'Main navigation';
 		this.element = document.createElement('header');
 		this.element.className = 'header';
 		this.element.innerHTML =
-			'<nav aria-label="Main navigation">' +
+			'<nav aria-label="' + navAriaLabel + '">' +
 			'<div class="nav-container">' +
 			'<ul class="nav-buttons">' +
 			items +
