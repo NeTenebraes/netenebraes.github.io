@@ -73,15 +73,6 @@
 	opacity: 0.12;
 }
 
-.bg-shape--line-h {
-	bottom: 20%;
-	left: 0;
-	width: 40%;
-	height: 1px;
-	background: var(--color-accent);
-	opacity: 0.12;
-}
-
 .bg-shape--diagonal {
 	top: -5%;
 	right: 5%;

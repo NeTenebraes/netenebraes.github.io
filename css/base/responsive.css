@@ -125,14 +125,6 @@
 		min-width: 140px;
 	}
 
-	.hero-social {
-		align-items: center;
-	}
-
-	.hero-social-divider {
-		align-self: center;
-	}
-
 	.hero-image {
 		width: clamp(320px, 65vw, 380px);
 		height: auto;
@@ -201,26 +193,6 @@
 		width: 100%;
 	}
 
-	.mono-chart__label {
-		min-width: 100px;
-		font-size: 0.62rem;
-	}
-
-	.mono-chart__track {
-		height: 10px;
-		border-radius: 5px;
-	}
-
-	.mono-chart__fill {
-		border-radius: 5px;
-	}
-
-	/* Pills: se mantienen en row pero más compactas */
-	.badge {
-		font-size: 0.62rem;
-		padding: 5px 12px;
-	}
-
 	.hero-stats {
 		justify-content: center;
 	}
@@ -252,12 +224,6 @@
 	.bg-shape--diagonal {
 		width: 140px;
 		height: 140px;
-		opacity: 0.08;
-	}
-
-	.bg-shape--dot {
-		width: 8px;
-		height: 8px;
 		opacity: 0.08;
 	}
 

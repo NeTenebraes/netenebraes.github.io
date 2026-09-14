@@ -1,48 +1,10 @@
 /* =============================================
    Component — Badges / pills en ROW
-   Sistema único de píldoras: .badge, .tech-card,
+   Sistema único de píldoras: .tech-card,
    .project-card__tag. Siempre fila, nunca columna.
    Los márgenes viven en los contenedores (gap),
    no en cada píldora.
    ============================================= */
-
-/* --- Badge genérico (proyectos) --- */
-.badge {
-	display: inline-flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: var(--badge-gap);
-	padding: var(--badge-padding);
-	white-space: nowrap;
-	line-height: 1;
-	border: 1px solid var(--color-border);
-	border-radius: var(--radius-pill);
-	font-family: var(--font-mono);
-	font-size: 0.68rem;
-	font-weight: 500;
-	color: var(--color-text-muted);
-	background: var(--color-bg-alt);
-	transition: all 0.25s ease;
-	cursor: default;
-}
-
-.badge:hover {
-	border-color: var(--color-accent);
-	color: var(--color-accent);
-	background: var(--color-accent-dim);
-}
-
-.badge svg {
-	width: 12px;
-	height: 12px;
-	flex-shrink: 0;
-}
-
-.badge__text {
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
 
 /* --- Tech pills (about) — ROW, forma píldora --- */
 .tech-grid {

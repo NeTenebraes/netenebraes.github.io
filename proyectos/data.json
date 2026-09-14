@@ -20,7 +20,7 @@
 		"slug": "nvim-html-css-pr64",
 		"titleKey": "project_3_title",
 		"image": "preview.png",
-		"tagIds": ["lua", "open-source", "neovim-plugin", "bug-fix"],
+		"tagIds": ["lua"],
 		"tagNames": ["Lua", "Open Source", "Neovim Plugin", "Bug Fix"],
 		"githubUrl": "https://github.com/Jezda1337/nvim-html-css/pull/64"
 	},

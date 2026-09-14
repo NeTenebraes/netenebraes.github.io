@@ -64,12 +64,6 @@
 	color: var(--color-text-muted);
 }
 
-.terminal__divider {
-	border: none;
-	border-top: 1px dashed var(--color-border);
-	margin: 10px 0;
-}
-
 .contribution-graph {
 	margin-top: 12px;
 	padding: 12px 16px 0 12px;

@@ -13,7 +13,6 @@
 	--color-border: #2a2a2e;
 	--color-text: #e0e0e0;
 	--color-text-muted: #b0b0b0;
-	--color-text-silver: #b0b0b0;
 	--color-red: #ff5f56;
 	--color-yellow: #ffbd2e;
 	--color-green: #27c93f;
@@ -25,18 +24,14 @@
 	/* Radii — unificado en píldora */
 	--radius-pill: 999px;
 	--nav-btn-size: 52px;
-	--nav-btn-radius: 30px;
 	--btn-radius: var(--radius-pill);
 	--badge-radius: var(--radius-pill);
 	--radius-card: 12px;
 	--hero-radius: 24px;
-	--radius-sm: 8px;
 
 	/* Spacing scale */
-	--space-xs: 6px;
 	--space-sm: 8px;
 	--space-md: 12px;
-	--space-lg: 16px;
 	--space-xl: 24px;
 	--space-2xl: 32px;
 
@@ -49,12 +44,6 @@
 	--container-max: 1200px;
 	--footer-height: 80px;
 	--footer-height-mobile: 122px;
-
-	/* Breakpoints (solo referencia, los @media usan los mismos valores) */
-	--bp-tablet: 1024px;
-	--bp-mobile: 768px;
-	--bp-small: 480px;
-	--bp-cards-stack: 900px;
 
 	/* Background geometric shapes */
 	--bg-shape-rect: var(--color-accent);
