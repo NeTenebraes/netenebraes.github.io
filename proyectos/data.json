@@ -3,22 +3,30 @@
 		"slug": "devPortes",
 		"titleKey": "project_1_title",
 		"image": "preview.png",
-		"tagIds": ["javascript", "nosql"],
-		"tagNames": ["JavaScript", "NoSQL"],
+		"tagIds": ["javascript", "html5", "css3", "postgresql", "java", "spring", "api-rest"],
+		"tagNames": ["JavaScript", "HTML5", "CSS3", "PostgreSQL", "Java", "Spring Boot", "API REST"],
 		"githubUrl": "https://github.com/camilobermeo/devPortes",
 		"demoUrl": "https://camilobermeo.github.io/devPortes/"
 	},
 	{
 		"slug": "nebspwm-dotfiles",
 		"titleKey": "project_2_title",
-		"image": "preview.png",
-		"tagIds": ["linux", "bash", "python"],
-		"tagNames": ["Linux", "Bash", "Python"],
+		"image": "preview.webp",
+		"tagIds": ["linux", "bash"],
+		"tagNames": ["Linux", "Bash"],
 		"githubUrl": "https://github.com/NeTenebraes/neBSPWM-dotfiles"
 	},
 	{
-		"slug": "intel-buffer-fix",
+		"slug": "nvim-html-css-pr64",
 		"titleKey": "project_3_title",
+		"image": "preview.png",
+		"tagIds": ["lua", "open-source", "neovim-plugin", "bug-fix"],
+		"tagNames": ["Lua", "Open Source", "Neovim Plugin", "Bug Fix"],
+		"githubUrl": "https://github.com/Jezda1337/nvim-html-css/pull/64"
+	},
+	{
+		"slug": "intel-buffer-fix",
+		"titleKey": "project_4_title",
 		"image": "preview.png",
 		"tagIds": ["linux", "bash"],
 		"tagNames": ["Linux", "Bash"],
@@ -26,36 +34,19 @@
 	},
 	{
 		"slug": "nenvim",
-		"titleKey": "project_4_title",
+		"titleKey": "project_5_title",
 		"image": "preview.png",
-		"tagIds": ["lua", "git"],
-		"tagNames": ["Lua", "Git"],
+		"tagIds": ["lua", "bash", "neovim"],
+		"tagNames": ["Lua", "Bash", "Neovim"],
 		"githubUrl": "https://github.com/NeTenebraes/nenvim"
 	},
 	{
 		"slug": "neCyberWiki",
-		"titleKey": "project_5_title",
-		"image": "preview.png",
-		"tagIds": ["cybersecurity", "git"],
-		"tagNames": ["Cybersecurity", "Git"],
-		"githubUrl": "https://github.com/NeTenebraes/neCyberWiki",
-		"demoUrl": "https://netenebraes.github.io/neCyberWiki/"
-	},
-	{
-		"slug": "nasa-apod-explorer",
 		"titleKey": "project_6_title",
 		"image": "preview.png",
-		"tagIds": ["javascript", "curl"],
-		"tagNames": ["JavaScript", "Curl"],
-		"githubUrl": "https://github.com/MarAlvGEN/NASA_APOD_Explorer",
-		"demoUrl": "https://maralvgen.github.io/NASA_APOD_Explorer/"
-	},
-	{
-		"slug": "nvim-html-css-pr64",
-		"titleKey": "project_7_title",
-		"image": "preview.png",
-		"tagIds": ["lua", "git"],
-		"tagNames": ["Lua", "Git"],
-		"githubUrl": "https://github.com/Jezda1337/nvim-html-css/pull/64"
+		"tagIds": ["javascript", "html5", "css3", "quartz", "astro", "cybersecurity"],
+		"tagNames": ["JavaScript", "HTML5", "CSS3", "Quartz", "Astro", "Cybersecurity"],
+		"githubUrl": "https://github.com/NeTenebraes/neCyberWiki",
+		"demoUrl": "https://netenebraes.github.io/neCyberWiki/"
 	}
 ]

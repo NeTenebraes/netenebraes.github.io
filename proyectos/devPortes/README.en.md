@@ -5,31 +5,54 @@ tags: [javascript, nosql, fullstack, reservations]
 
 # devPortes
 
-Sports complex management and reservation system.
+> A full-stack sports complex management and reservation system built from scratch in a team environment.
 
 ![Preview](preview.png)
-![Screenshot 1](preview.png)
-![Screenshot 2](preview.png)
 
 ## Overview
 
-Sports complex management and reservation system developed as a final bootcamp project. Features reservation modules, admin panels, and user profile management.
+devPortes is a web-based platform that allows users to browse, book, and manage reservations for sports facilities — courts, fields, and courts — in real time. Built as the final project of a software development bootcamp, it demonstrates the ability to deliver a complete product under tight deadlines with a cross-functional team.
 
-## Implications
+The system serves two audiences: **regular users** who book and manage their reservations, and **administrators** who oversee facilities, time slots, and user accounts.
 
-Provides a complete booking workflow for sports facilities, demonstrating full-stack development skills in a team environment.
+## Key Features
 
-## Challenges
+- **Real-time availability** — Users see up-to-date slot availability and can book instantly
+- **Admin dashboard** — Full control over facilities, schedules, and user management
+- **Role-based access** — Separate interfaces and permissions for users and administrators
+- **User profiles** — Personal reservation history, profile management, and notifications
+- **Responsive design** — Works seamlessly on desktop and mobile devices
 
-- Coordinating frontend-backend integration across team members
-- Managing reservation state
-- Implementing role-based access for admin and regular users
+> The project was deployed on GitHub Pages with a fully functional reservation flow and admin panel.
 
-## Results
+## How It Was Built
 
-Deployed on GitHub Pages with functional reservation and admin panels. Built with HTML, CSS, and JavaScript.
+The application follows a classic client-server architecture. The frontend handles form validation, dynamic slot rendering, and API communication, while the backend manages authentication, reservation logic, and data persistence.
+
+### Team Workflow
+
+Working in a team of developers required coordinating integrations across modules — reservation logic, admin panel, and user profiles were developed in parallel and merged through Git.
+
+![Our Team](nosotros.png)
+*The development team during a sprint review.*
+
+## App Gallery
+
+![App Gallery](galeria.png)
+*Reservation interface and facility management screens.*
 
 ## Tech Stack
 
-- JavaScript
-- NoSQL
+| Layer | Technology |
+|-------|-----------|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | JavaScript (Node.js) |
+| Database | NoSQL (MongoDB) |
+| Deploy | GitHub Pages |
+
+## What I Learned
+
+- **Team coordination** — Managing parallel feature development and merge workflows
+- **State management** — Handling reservation state across concurrent users
+- **Full-stack integration** — Connecting frontend forms to backend APIs and database operations
+- **Agile methodology** — Delivering increments in short sprint cycles

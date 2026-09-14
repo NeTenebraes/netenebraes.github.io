@@ -39,6 +39,13 @@ class IconService {
 			'aws',
 			'javascript',
 			'lua',
+			'html5',
+			'css3',
+			'sql',
+			'api-rest',
+			'neovim',
+			'quartz',
+			'astro',
 		];
 
 		const loadPromises = iconNames.map(async (name) => {
