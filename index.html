@@ -28,7 +28,7 @@
 		<main>
 			<section id="home" class="hero">
 				<div class="hero-content">
-					<span class="hero-badge">
+					<span class="hero-badge fade-up">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -48,7 +48,7 @@
 						<span data-i18n="hero_badge">Freelance</span>
 					</span>
 
-					<div class="hero-stats">
+					<div class="hero-stats fade-up">
 						<a
 							href="https://youtube.com/@NeTenebrae"
 							class="hero-stat"
@@ -90,20 +90,20 @@
 						</a>
 					</div>
 
-					<h1>NeTenebrae</h1>
+					<h1 class="fade-up">NeTenebrae</h1>
 
-					<h2 data-i18n="hero_subtitle">
+					<h2 class="fade-up" data-i18n="hero_subtitle">
 						Fullstack Developer | SecOps
 					</h2>
 
-			<p class="hero-description" data-i18n="hero_description">
+			<p class="hero-description fade-up" data-i18n="hero_description">
 					Backend developer with a hacker's mindset. I build
 					secure APIs and automate Linux systems, then turn
 					what I learn into content for 64k+ developers across
 					YouTube and TikTok.
 				</p>
 
-					<div class="hero-actions">
+					<div class="hero-actions fade-up">
 						<button
 							class="btn btn--primary"
 							id="emailBtn"
@@ -154,6 +154,7 @@
 
 				<div class="hero-image">
 					<img
+						class="slide-in-right"
 						src="assets/images/avatar-banner.webp"
 						alt="NeTenebrae - Backend Developer & SecOps"
 					/>
@@ -187,6 +188,8 @@
 					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.28 6.28 0 00-6.28 6.28 6.28 6.28 0 006.28 6.28 6.28 6.28 0 006.28-6.28V8.75a8.18 8.18 0 004.77 1.52V6.82a4.84 4.84 0 01-1.03-.13z"/></svg>';
 				var tiktokEl = document.getElementById('statTiktok');
 				if (tiktokEl) tiktokEl.innerHTML = tiktokSvg;
+
+				FadeUpAnimator.init();
 			});
 		</script>
 	</body>

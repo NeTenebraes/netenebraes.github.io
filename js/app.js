@@ -1,28 +1,3 @@
-class StatBarAnimator {
-	constructor() {
-		this.observer = new IntersectionObserver(
-			function (entries) {
-				entries.forEach(function (entry) {
-					if (entry.isIntersecting) {
-						entry.target.style.width =
-							entry.target.getAttribute('data-percent') + '%';
-						this.unobserve(entry.target);
-					}
-				});
-			}.bind(this),
-			{ threshold: 0.5 },
-		);
-	}
-
-	init() {
-		var fills = document.querySelectorAll('.mono-chart__fill');
-		var observer = this.observer;
-		fills.forEach(function (fill) {
-			observer.observe(fill);
-		});
-	}
-}
-
 /* =============================================
    Micro-interactions (Amicro-inspired)
    ============================================= */
@@ -54,38 +29,6 @@ class TiltCard {
 	}
 }
 
-class MagneticHover {
-	constructor(element, range, strength) {
-		this.element = element;
-		this.range = range || 45;
-		this.strength = strength || 0.35;
-		this.bindEvents();
-	}
-
-	bindEvents() {
-		var self = this;
-		this.element.addEventListener('mousemove', function (e) {
-			var rect = self.element.getBoundingClientRect();
-			var centerX = rect.left + rect.width / 2;
-			var centerY = rect.top + rect.height / 2;
-			var dist = Math.hypot(e.clientX - centerX, e.clientY - centerY);
-
-			if (dist < self.range) {
-				var targetX = (e.clientX - centerX) * self.strength;
-				var targetY = (e.clientY - centerY) * self.strength;
-				self.element.style.transform =
-					'translate(' + targetX + 'px, ' + targetY + 'px)';
-			} else {
-				self.element.style.transform = 'translate(0, 0)';
-			}
-		});
-
-		this.element.addEventListener('mouseleave', function () {
-			self.element.style.transform = 'translate(0, 0)';
-		});
-	}
-}
-
 class FadeUpAnimator {
 	static init() {
 		var observer = new IntersectionObserver(
@@ -101,26 +44,6 @@ class FadeUpAnimator {
 		);
 
 		document.querySelectorAll('.fade-up').forEach(function (el) {
-			observer.observe(el);
-		});
-	}
-}
-
-class TextRevealAnimator {
-	static init() {
-		var observer = new IntersectionObserver(
-			function (entries) {
-				entries.forEach(function (entry) {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-						observer.unobserve(entry.target);
-					}
-				});
-			},
-			{ threshold: 0.1 },
-		);
-
-		document.querySelectorAll('.text-reveal').forEach(function (el) {
 			observer.observe(el);
 		});
 	}

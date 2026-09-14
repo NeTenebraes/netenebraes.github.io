@@ -107,7 +107,7 @@ class ProjectManager {
 			var iconSvg = iconId ? IconService.get(iconId) : '';
 
 			var card =
-				'<article class="project-card" data-slug="' +
+				'<article class="project-card fade-up" data-slug="' +
 				project.slug +
 				'">';
 
@@ -168,6 +168,8 @@ class ProjectManager {
 					window.location.hash = card.getAttribute('data-slug');
 				});
 			});
+
+		FadeUpAnimator.init();
 	}
 
 	renderDetail(slug) {

@@ -1,5 +1,5 @@
 /* =============================================
-   Animations — fade-up, text-reveal, magnetic
+   Animations — fade-up, bg-shapes
    ============================================= */
 .fade-up {
 	opacity: 0;
@@ -42,33 +42,137 @@
 .tech-card:nth-child(9) {
 	transition-delay: 0.48s;
 }
-
-.text-reveal {
-	overflow: hidden;
+.tech-card:nth-child(10) {
+	transition-delay: 0.54s;
+}
+.tech-card:nth-child(11) {
+	transition-delay: 0.6s;
+}
+.tech-card:nth-child(12) {
+	transition-delay: 0.66s;
 }
 
-.text-reveal__line {
-	overflow: hidden;
+/* About page stagger delays */
+.about__terminal {
+	transition-delay: 0.1s;
+}
+.about__right .fade-up:nth-child(2) {
+	transition-delay: 0.15s;
+}
+.about__right .fade-up:nth-child(3) {
+	transition-delay: 0.25s;
+}
+.about__right .fade-up:nth-child(4) {
+	transition-delay: 0.35s;
+}
+.about__right .fade-up:nth-child(5) {
+	transition-delay: 0.45s;
+}
+.tech-label {
+	transition-delay: 0.05s;
 }
 
-.text-reveal__text {
-	display: block;
-	transform: translateY(100%);
-	transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+/* Hero page stagger delays */
+.hero-badge {
+	transition-delay: 0s;
+}
+.hero-stats {
+	transition-delay: 0.1s;
+}
+.hero-content h1.fade-up {
+	transition-delay: 0.2s;
+}
+.hero-content h2.fade-up {
+	transition-delay: 0.3s;
+}
+.hero-description {
+	transition-delay: 0.4s;
+}
+.hero-actions {
+	transition-delay: 0.5s;
+}
+.hero-image {
+	transition-delay: 0.3s;
 }
 
-.text-reveal.visible .text-reveal__text {
-	transform: translateY(0);
+/* Project cards stagger delays */
+.project-card:nth-child(1) {
+	transition-delay: 0s;
+}
+.project-card:nth-child(2) {
+	transition-delay: 0.08s;
+}
+.project-card:nth-child(3) {
+	transition-delay: 0.16s;
+}
+.project-card:nth-child(4) {
+	transition-delay: 0.24s;
+}
+.project-card:nth-child(5) {
+	transition-delay: 0.32s;
+}
+.project-card:nth-child(6) {
+	transition-delay: 0.4s;
 }
 
-.magnetic {
-	transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-	will-change: transform;
+/* Background shape animations */
+@keyframes slowRotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes slowPulse {
+	0%, 100% {
+		opacity: 0.12;
+		transform: rotate(35deg) scale(1);
+	}
+	50% {
+		opacity: 0.18;
+		transform: rotate(35deg) scale(1.03);
+	}
+}
+
+@keyframes slowDrift {
+	0%, 100% {
+		transform: rotate(-12deg) translateY(0);
+	}
+	50% {
+		transform: rotate(-12deg) translateY(-8px);
+	}
+}
+
+.bg-shape--ring {
+	animation: slowRotate 60s linear infinite;
+}
+
+.bg-shape--diamond {
+	animation: slowPulse 8s ease-in-out infinite;
+}
+
+.bg-shape--rect {
+	animation: slowDrift 12s ease-in-out infinite;
+}
+
+/* Hero image slide-in from right (clip-path reveal) */
+@keyframes slideInRight {
+	from {
+		clip-path: inset(0 0 0 100%);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+.slide-in-right {
+	animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
 	.fade-up,
-	.text-reveal__text,
 	.tech-card,
 	.btn,
 	.project-card {
@@ -80,7 +184,14 @@
 		opacity: 1;
 	}
 
-	.text-reveal__text {
-		transform: none;
+	.bg-shape--ring,
+	.bg-shape--diamond,
+	.bg-shape--rect {
+		animation: none;
+	}
+
+	.slide-in-right {
+		animation: none;
+		clip-path: none;
 	}
 }

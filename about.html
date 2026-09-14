@@ -31,7 +31,7 @@
 
 				<div class="about__grid">
 					<div class="about__left">
-						<div class="terminal about__terminal">
+						<div class="terminal about__terminal fade-up">
 							<div class="terminal__header">
 								<div class="terminal__dots">
 									<div
@@ -141,7 +141,7 @@
 
 						<div>
 							<div
-								class="tech-label"
+								class="tech-label fade-up"
 								data-i18n="about_tech_label"
 							>
 								CORE TECHNOLOGIES
@@ -151,11 +151,11 @@
 					</div>
 
 					<div class="about__right">
-						<h2 data-i18n="about_heading">
-							PROFILE: MAURICIO &Aacute;LVAREZ
-						</h2>
+					<h2 class="fade-up" data-i18n="about_heading">
+						PROFILE: MAURICIO &Aacute;LVAREZ
+					</h2>
 
-						<p data-i18n="about_p1">
+					<p class="fade-up" data-i18n="about_p1">
 							Fullstack developer with a backend focus,
 							specialized in Java &amp; Spring Boot and building
 							secure REST APIs. My cybersecurity and SecOps
@@ -163,14 +163,14 @@
 							with security built in from the start.
 						</p>
 
-						<p data-i18n="about_p2">
+						<p class="fade-up" data-i18n="about_p2">
 							As a Linux systems administrator, I build and
 							maintain optimized Arch Linux workspaces, automating
 							tasks with custom scripts and configuring servers
 							for development and production environments.
 						</p>
 
-						<p data-i18n="about_p3">
+						<p class="fade-up" data-i18n="about_p3">
 							I create educational content about ethical hacking,
 							Linux, and system administration on YouTube (17k+
 							subscribers) and TikTok (47k+ followers). I also
@@ -216,7 +216,6 @@
 				new Footer().render();
 				var i18n = new I18n();
 				i18n.init();
-				new StatBarAnimator().init();
 
 				var techItems = [
 					{ name: 'Java', iconId: 'java' },
@@ -292,22 +291,35 @@
 						var dateStr = y + '-' + m + '-' + d;
 						var count = counts[dateStr] || 0;
 
-						var square = document.createElement('div');
-						square.className = 'contribution-square';
-						square.title = dateStr + ': ' + count + ' commits';
+				var square = document.createElement('div');
+					square.className = 'contribution-square';
+					square.title = dateStr + ': ' + count + ' commits';
+					var targetOpacity = '0.1';
+					var delay = (29 - i) * 0.03;
 
 						if (count > 0) {
 							var intensity = count / maxCount;
-							if (intensity > 0.66) square.style.opacity = '1';
-							else if (intensity > 0.33)
-								square.style.opacity = '0.6';
-							else square.style.opacity = '0.3';
+							if (intensity > 0.66) targetOpacity = '1';
+							else if (intensity > 0.33) targetOpacity = '0.6';
+							else targetOpacity = '0.3';
 						}
+
+					square.style.opacity = '0';
+					square.style.transition = 'opacity 0.3s ease ' + delay + 's';
+					square.dataset.targetOpacity = targetOpacity;
 
 						grid.appendChild(square);
 					}
 
 					grid.insertAdjacentHTML('afterbegin', label);
+
+					requestAnimationFrame(function () {
+						requestAnimationFrame(function () {
+							grid.querySelectorAll('.contribution-square').forEach(function (sq) {
+								sq.style.opacity = sq.dataset.targetOpacity || '0.1';
+							});
+						});
+					});
 				}
 
 				function renderCommits(events) {
