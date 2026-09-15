@@ -27,71 +27,27 @@ contenido para más de 64k desarrolladores en YouTube y TikTok.
 
 # [![Website](https://img.shields.io/badge/Website-Live-0d1117?style=for-the-badge&logo=github&logoColor=white)](https://netenebraes.github.io)
 
-# Prototipado de Portafolio | PROPUESTA #01
+## Prototipado en Penpot (Propuesta UI/UX)
 
-## [CHECA EL INDEX](https://design.penpot.app/#/view?file-id=9529fedc-e097-80ce-8008-64cea048fef8&page-id=913d4a22-ba3f-8112-8008-613dd747e4b8&section=interactions&index=0&share-id=d390ec3b-f0b3-80cd-8008-64d06ed9c15c)
+![Vista previa del prototipo](./assets/preview.png)
 
-![Vista previa del portafolio](./assets/preview.png)
+> **Nota:** El diseño incluye la maqueta del `index`, junto con la estructura de componentes base y assets de referencia.
 
-> Por el momento, el portafolio **solo cuenta con el index**. Sin embargo,
-> también encontrarás las referencias y mis proyectos personales en los cuales
-> me basé para la realización de este trabajo.
+### Opciones de Inspección
 
-## Resumen
+![Guía de inspección](./assets/tuto.png)
 
-Este repositorio contiene la **propuesta** de diseño para el portafolio personal
-en base a **mis proyectos y trabajos anteriores**.
+* **Opción 1. Visualización Online (Recomendada):** Permite navegar la UI e inspeccionar estilos, fuentes y CSS generado directamente en la nube.
+  * [Acceso directo al prototipo en Penpot](https://design.penpot.app/#/view?file-id=9529fedc-e097-80ce-8008-64cea048fef8&page-id=913d4a22-ba3f-8112-8008-613dd747e4b8&section=interactions&index=0&share-id=d390ec3b-f0b3-80cd-8008-64d06ed9c15c) *(requiere cuenta gratuita)*.
 
-El proyecto está preparado para que puedas consultarlo de **dos formas
-distintas**:
+* **Opción 2. Despliegue Local con Docker:** Si prefieres trabajar sin depender de la nube o servidores externos:
+  * Levanta una instancia propia siguiendo la [documentación de Penpot en Docker](https://help.penpot.app/technical-guide/getting-started/docker/).
+  * Importa el archivo fuente [`index.penpot`](./index.penpot) en tu servidor local.
 
-1. [Mediante acceso directo en la nube](https://design.penpot.app/#/view?file-id=9529fedc-e097-80ce-8008-64cea048fef8&page-id=913d4a22-ba3f-8112-8008-613dd747e4b8&section=interactions&index=0&share-id=d390ec3b-f0b3-80cd-8008-64d06ed9c15c)
+---
 
-1. Descargando e importando el archivo fuente a la aplicacion desplegada en un
-   entorno local contenerizado con Docker.
+### ¿Por qué Penpot sobre Figma?
 
-### Como inspeccionar (Web y Local)
-
-![Vista previa del portafolio](./assets/tuto.png)
-
-______________________________________________________________________
-
-## Opción 1. Visualización Directa Online (Recomendada)
-
-Para revisar el diseño final y probar las interacciones sin necesidad de
-instalar software adicional. La vista interactiva permite navegar por la
-estructura de pantallas e inspeccionar propiedades de diseño como fuentes,
-colores y código CSS generado.
-
-> **Requiere cuenta gratuita de penpot - Se recomienda Google**
-
-- [Acceso directo al prototipo](https://design.penpot.app/#/view?file-id=9529fedc-e097-80ce-8008-64cea048fef8&page-id=913d4a22-ba3f-8112-8008-613dd747e4b8&section=interactions&index=0&share-id=d390ec3b-f0b3-80cd-8008-64d06ed9c15c)
-
-## Opción 2. Despliegue Local con Docker
-
-Si prefieres revisar el proyecto dentro de una instancia propia e independiente
-de Penpot (Y así aprovechar caracteristica como **generar codigo completamente
-gratis**), puedes levantar el servidor localmente mediante Docker e importar el
-[`index.penpot`](https://github.com/MarAlvGEN/portafolio/blob/main/index.penpot).
-
-> [Más info en la documentación de Penpot](https://help.penpot.app/technical-guide/getting-started/docker/)
-
-______________________________________________________________________
-
-## ¿Por qué elegí Penpot sobre Figma?
-
-Seleccioné **Penpot** para el diseño de este prototipo por tres razones técnicas
-y prácticas:
-
-- **Inspección de código libre e ilimitada:** A diferencia de Figma (que
-  restringió su *Dev Mode* tras un muro de pago), Penpot permite
-  inspeccionar/exportar el código HTML, CSS y SVG generado de forma 100%
-  gratuita y sin limitaciones.
-- **Terminología nativa de CSS:** En lugar de usar solo términos para
-  diseñadores (como hace Figma para sus botones), Penpot utiliza las propiedades
-  de CSS reales en su UI (por ejemplo, los botones directamente se llaman
-  `align-items` o `justify-content`, ect). Diseñar en Penpot ayuda mucho a
-  entener como se maqueta en CSS.
-- **Rendimiento optimizado y autonomía**: Al poder desplegar Penpot localmente
-  con Docker, la herramienta aprovecha los recursos del sistema sin depender de
-  la velocidad de conexión a internet ni de la carga de servidores de terceros.
+* **Dev Mode ilimitado:** Inspección y exportación de código HTML, CSS y SVG 100% libre sin muros de pago.
+* **Estándares CSS nativos:** La interfaz utiliza reglas reales de maquetación (`flexbox`, `align-items`, `justify-content`) en lugar de abstracciones de diseño.
+* **Autonomía y privacidad:** Soporte para ejecución *self-hosted* mediante contenedores Docker.
